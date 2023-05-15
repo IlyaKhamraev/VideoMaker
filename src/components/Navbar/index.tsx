@@ -1,31 +1,30 @@
-import React from "react";
 import { styled } from "styled-components";
+
+import { Social } from "components/Social";
 
 export const Navbar = () => {
   return (
     <Wrapper>
       <Content>
         <Header>
-          <Logo href="#">R.Raudsepp</Logo>
+          <Logo href="/">R. Raudsepp</Logo>
         </Header>
         <Navigation>
           <Routes>
             <RoutesItem>
-              <RoutesItemLink href="#">Films</RoutesItemLink>
+              <RoutesItemLink href="#">films</RoutesItemLink>
             </RoutesItem>
             <RoutesItem>
-              <RoutesItemLink href="#">Photo</RoutesItemLink>
+              <RoutesItemLink href="#">photo</RoutesItemLink>
             </RoutesItem>
             <RoutesItem>
-              <RoutesItemLink href="#">Info</RoutesItemLink>
+              <RoutesItemLink href="#">info</RoutesItemLink>
             </RoutesItem>
             <RoutesItem>
-              <RoutesItemLink href="#">Contact</RoutesItemLink>
+              <RoutesItemLink href="#">contact</RoutesItemLink>
             </RoutesItem>
           </Routes>
-          <Social>
-            <li>ins</li>
-          </Social>
+          <Social />
         </Navigation>
       </Content>
     </Wrapper>
@@ -57,8 +56,6 @@ export const Wrapper = styled.div`
 
 export const Navigation = styled.nav``;
 
-export const Social = styled.ul``;
-
 export const Routes = styled.ul``;
 
 export const RoutesItem = styled.li`
@@ -75,5 +72,10 @@ export const RoutesItemLink = styled.a`
 `;
 
 export const Logo = styled.a`
+  transition: 0.4s;
   color: var(--white-color);
+
+  &:hover {
+    color: var(--primary-color);
+  }
 `;

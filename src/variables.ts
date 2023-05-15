@@ -9,4 +9,12 @@ export const theme = {
     white: "#fff",
     black: "#000",
   },
+  size: {
+    sm: 24,
+    md: 24,
+  },
+  spacing: {
+    sm: 8,
+    md: 16,
+  },
 };
