@@ -11,9 +11,9 @@ export const Container = () => (
 );
 
 export const ContainerWrapper = styled.div`
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  height: 100%;
   display: flex;
+  overflow: visible;
+  margin: 0 auto;
+  padding-right: 20px;
+  justify-content: center;
 `;

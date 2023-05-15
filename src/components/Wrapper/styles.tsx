@@ -7,14 +7,11 @@ export const WrapperComponent = styled.div`
   background: var(--black-color);
 
   @media (min-width: ${theme.breakpoints.sm}px) {
-    color: red;
   }
 
   @media (min-width: ${theme.breakpoints.md}px) {
-    color: blue;
   }
 
   @media (min-width: ${theme.breakpoints.lg}px) {
-    color: yellow;
   }
 `;

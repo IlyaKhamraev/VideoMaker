@@ -1,6 +1,16 @@
 import { styled } from "styled-components";
 
-export const Content = () => <Wrapper>Content</Wrapper>;
+import { Films } from "components/Films";
+
+export const Content = () => (
+  <Wrapper>
+    <Container>
+      <div>
+        <Films />
+      </div>
+    </Container>
+  </Wrapper>
+);
 
 export const Wrapper = styled.div`
   display: flex;
@@ -9,4 +19,11 @@ export const Wrapper = styled.div`
   padding-bottom: 6vw;
   align-items: center;
   flex: 0 0 auto;
+`;
+
+export const Container = styled.div`
+  position: relative;
+  overflow: visible;
+  padding-top: 16px;
+  flex: 1;
 `;
