@@ -1,6 +1,9 @@
 import { styled } from "styled-components";
 
 import { Social } from "components/Social";
+import { NavItem } from "components/Navbar/Navitem";
+import { paths } from "components/Navbar/constants";
+import { theme } from "variables";
 
 export const Navbar = () => {
   return (
@@ -11,18 +14,9 @@ export const Navbar = () => {
         </Header>
         <Navigation>
           <Routes>
-            <RoutesItem>
-              <RoutesItemLink href="#">films</RoutesItemLink>
-            </RoutesItem>
-            <RoutesItem>
-              <RoutesItemLink href="#">photo</RoutesItemLink>
-            </RoutesItem>
-            <RoutesItem>
-              <RoutesItemLink href="#">info</RoutesItemLink>
-            </RoutesItem>
-            <RoutesItem>
-              <RoutesItemLink href="#">contact</RoutesItemLink>
-            </RoutesItem>
+            {paths.map((route) => (
+              <NavItem {...route} />
+            ))}
           </Routes>
           <Social />
         </Navigation>
@@ -45,7 +39,6 @@ export const Header = styled.div`
 export const Wrapper = styled.div`
   padding-left: 20px;
   background-color: transparent;
-
   position: sticky;
   left: 0;
   top: 0;
@@ -58,24 +51,12 @@ export const Navigation = styled.nav``;
 
 export const Routes = styled.ul``;
 
-export const RoutesItem = styled.li`
-  margin-bottom: 8px;
-`;
-
-export const RoutesItemLink = styled.a`
-  transition: 0.4s;
-  color: var(--white-color);
-
-  &:hover {
-    color: var(--primary-color);
-  }
-`;
-
 export const Logo = styled.a`
   transition: 0.4s;
-  color: var(--white-color);
+  color: ${theme.colors.white};
+  font-family: "opensans_bold", sans-serif;
 
   &:hover {
-    color: var(--primary-color);
+    color: ${theme.colors.primary};
   }
 `;
