@@ -1,16 +1,15 @@
+import { FC } from "react";
 import { styled } from "styled-components";
 
-import { Navbar } from "components/Navbar";
-import { Content } from "components/Content";
+interface Props {
+  children: JSX.Element;
+}
 
-export const Container = () => (
-  <ContainerWrapper>
-    <Navbar />
-    <Content />
-  </ContainerWrapper>
+export const Container: FC<Props> = ({ children }) => (
+  <ContainerWrapper>{children}</ContainerWrapper>
 );
 
-export const ContainerWrapper = styled.div`
+const ContainerWrapper = styled.div`
   display: flex;
   overflow: visible;
   margin: 0 auto;

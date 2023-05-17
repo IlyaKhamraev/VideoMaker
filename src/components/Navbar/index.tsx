@@ -1,21 +1,29 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-import { Social } from "components/Social";
 import { NavItem } from "components/Navbar/Navitem";
 import { paths } from "components/Navbar/constants";
+import { Social } from "components/Social";
 import { theme } from "variables";
 
 export const Navbar = () => {
+  const location = useLocation();
+
   return (
     <Wrapper>
       <Content>
         <Header>
-          <Logo href="/">R. Raudsepp</Logo>
+          <Logo to="/">R. Raudsepp</Logo>
         </Header>
         <Navigation>
           <Routes>
             {paths.map((route) => (
-              <NavItem {...route} />
+              <NavItem
+                {...route}
+                key={route.name}
+                active={location.pathname === route.path}
+              />
             ))}
           </Routes>
           <Social />
@@ -51,7 +59,7 @@ export const Navigation = styled.nav``;
 
 export const Routes = styled.ul``;
 
-export const Logo = styled.a`
+export const Logo = styled(Link)`
   transition: 0.4s;
   color: ${theme.colors.white};
   font-family: "opensans_bold", sans-serif;
