@@ -62,7 +62,8 @@ export const Routes = styled.ul``;
 export const Logo = styled(Link)`
   transition: 0.4s;
   color: ${theme.colors.white};
-  font-family: "opensans_bold", sans-serif;
+  font-family: ${theme.fonts.ThunderExtraBoldlc}, sans-serif;
+  font-size: ${theme.size.xl2}px;
 
   &:hover {
     color: ${theme.colors.primary};

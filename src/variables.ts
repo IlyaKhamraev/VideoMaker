@@ -12,8 +12,10 @@ export const theme = {
     primary: "#ffc93a",
   },
   size: {
-    sm: 24,
-    md: 24,
+    sm: 14,
+    md: 18,
+    xl: 20,
+    xl2: 24,
   },
   spacing: {
     sm: 8,
@@ -21,7 +23,7 @@ export const theme = {
   },
   fonts: {
     OpenSansSemiBold: "opensans_semibold",
-    OpenSansBold: "opensans_bold",
+    ThunderExtraBoldlc: "thunder-extraboldlc",
     OpenSansRegular: "opensans_regular",
   },
 };

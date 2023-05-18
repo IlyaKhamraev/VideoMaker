@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import { styled } from "styled-components";
 
 import { Container } from "components/Container";
+import { Contact } from "components/Contanct";
 import { Navbar } from "components/Navbar";
 import { Films } from "components/Films";
-import { Contact } from "components/Contanct";
 import { theme } from "variables";
 
 function App() {

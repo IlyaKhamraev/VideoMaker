@@ -50,7 +50,7 @@ const Link = styled.a`
 
 const Client = styled.div`
   color: ${theme.colors.primary};
-  font-size: 12px;
+  font-size: ${theme.size.sm}px;
   line-height: 1;
   letter-spacing: 0.38px;
   text-transform: uppercase;
@@ -59,7 +59,7 @@ const Client = styled.div`
 
 const Category = styled.div`
   color: ${theme.colors.g100};
-  font-size: 12px;
+  font-size: ${theme.size.sm}px;
   line-height: 1;
   letter-spacing: 0.38px;
   text-transform: uppercase;
@@ -70,11 +70,11 @@ const Name = styled.h2`
   margin-top: 8px;
   margin-bottom: 8px;
   opacity: 1;
-  font-size: 14px;
+  font-size: ${theme.size.xl}px;
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: ${theme.fonts.OpenSansBold}, sans-serif;
+  font-family: ${theme.fonts.ThunderExtraBoldlc}, sans-serif;
   color: ${theme.colors.white};
 `;
 

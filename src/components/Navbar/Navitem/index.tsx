@@ -17,6 +17,7 @@ export const NavItem: FC<Props> = ({ path, name }) => {
     </RoutesItem>
   );
 };
+
 const RoutesItem = styled.li`
   margin-bottom: 8px;
 `;
@@ -24,7 +25,8 @@ const RoutesItem = styled.li`
 const RoutesItemLink = styled(Link)`
   transition: 0.4s;
   color: ${theme.colors.white};
-  font-family: "opensans_bold", sans-serif;
+  font-family: "rg-standardbold", sans-serif;
+  font-size: ${theme.size.md}px;
 
   &:hover {
     color: ${theme.colors.primary};
