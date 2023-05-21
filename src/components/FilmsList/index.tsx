@@ -1,18 +1,15 @@
 import { styled } from "styled-components";
 
-import { Film } from "components/Films/Film";
+import { FilmItem } from "components/FilmsList/FilmItem";
+import { films } from "components/FilmsList/constants";
 
-export const Films = () => {
-  return (
-    <List>
-      <Film />
-      <Film />
-      <Film />
-      <Film />
-      <Film />
-    </List>
-  );
-};
+export const FilmsList = () => (
+  <List>
+    {films.map((film) => (
+      <FilmItem key={film.id} {...film} />
+    ))}
+  </List>
+);
 
 const List = styled.ul`
   display: grid;

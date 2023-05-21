@@ -2,9 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import { styled } from "styled-components";
 
 import { Container } from "components/Container";
+import { FilmsList } from "components/FilmsList";
+import { Film } from "components/FilmsList/Film";
 import { Contact } from "components/Contanct";
 import { Navbar } from "components/Navbar";
-import { Films } from "components/Films";
 import { theme } from "variables";
 
 function App() {
@@ -17,9 +18,10 @@ function App() {
             <Content>
               <AlignBlock>
                 <Routes>
-                  <Route path="/" element={<Films />} />
-                  <Route path="/services" element={<Films />} />
+                  <Route path="/" element={<FilmsList />} />
+                  <Route path="/services" element={<FilmsList />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/films/:id" element={<Film />} />
                 </Routes>
               </AlignBlock>
             </Content>

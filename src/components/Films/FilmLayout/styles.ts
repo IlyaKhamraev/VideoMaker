@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 import { theme } from "variables";
 
@@ -32,7 +33,7 @@ const Content = styled.div`
   margin-top: 12px;
 `;
 
-const Link = styled.a`
+const LinkWrapper = styled(Link)`
   position: relative;
   z-index: 200;
   display: block;
@@ -78,4 +79,4 @@ const Name = styled.h2`
   color: ${theme.colors.white};
 `;
 
-export { Name, Category, Client, Link, Content, Wrapper, FilmImg, Img };
+export { Name, Category, Client, LinkWrapper, Content, Wrapper, FilmImg, Img };
