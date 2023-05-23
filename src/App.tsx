@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 import { Container } from "components/Container";
 import { FilmsList } from "components/FilmsList";
 import { Film } from "components/FilmsList/Film";
+import { Dashboard } from "components/Dashboard";
 import { Contact } from "components/Contanct";
 import { Navbar } from "components/Navbar";
 import { theme } from "variables";
@@ -22,6 +23,7 @@ function App() {
                   <Route path="/services" element={<FilmsList />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/films/:id" element={<Film />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
                 </Routes>
               </AlignBlock>
             </Content>
