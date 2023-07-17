@@ -4,10 +4,6 @@ export const paths = [
     name: "films",
   },
   {
-    path: "/photo",
-    name: "photo",
-  },
-  {
     path: "/info",
     name: "info",
   },

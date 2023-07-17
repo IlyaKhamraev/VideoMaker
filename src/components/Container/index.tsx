@@ -15,4 +15,6 @@ const ContainerWrapper = styled.div`
   margin: 0 auto;
   padding-right: 20px;
   justify-content: center;
+  height: 100%;
+  width: 100%;
 `;

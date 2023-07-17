@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 import { Container } from "components/Container";
@@ -6,28 +7,33 @@ import { FilmsList } from "components/FilmsList";
 import { Film } from "components/FilmsList/Film";
 import { Dashboard } from "components/Dashboard";
 import { Contact } from "components/Contanct";
-import { Navbar } from "components/Navbar";
+import { LoginForm } from "components/Login";
+import { Info } from "components/Info";
 import { theme } from "variables";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+
+  const PrivateWrapper = () => {
+    return isAuthenticated ? <Dashboard /> : <Navigate to="/login" />;
+  };
+
   return (
     <div className="App">
       <Wrapper>
         <Container>
-          <>
-            <Navbar />
-            <Content>
-              <AlignBlock>
-                <Routes>
-                  <Route path="/" element={<FilmsList />} />
-                  <Route path="/services" element={<FilmsList />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/films/:id" element={<Film />} />
-                  <Route path="/dashboard" element={<Dashboard />} />
-                </Routes>
-              </AlignBlock>
-            </Content>
-          </>
+          <Routes>
+            {/* with navbar */}
+            <Route path="/" element={<FilmsList />} />
+            <Route path="/films/:id" element={<Film />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/info" element={<Info />} />
+            {/* routing for admin */}
+            <Route path="/login" element={<LoginForm />} />
+            <Route element={<PrivateWrapper />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Route>
+          </Routes>
         </Container>
       </Wrapper>
     </div>
@@ -49,20 +55,4 @@ const Wrapper = styled.div`
 
   @media (min-width: ${theme.breakpoints.lg}px) {
   }
-`;
-
-const Content = styled.div`
-  display: flex;
-  width: 764px;
-  padding-top: 6vw;
-  padding-bottom: 6vw;
-  align-items: center;
-  flex: 0 0 auto;
-`;
-
-const AlignBlock = styled.div`
-  position: relative;
-  overflow: visible;
-  padding-top: 16px;
-  flex: 1;
 `;

@@ -2,13 +2,16 @@ import { styled } from "styled-components";
 
 import { FilmItem } from "components/FilmsList/FilmItem";
 import { films } from "components/FilmsList/constants";
+import { Wrapper } from "components/Wrapper";
 
 export const FilmsList = () => (
-  <List>
-    {films.map((film) => (
-      <FilmItem key={film.id} {...film} />
-    ))}
-  </List>
+  <Wrapper>
+    <List>
+      {films.map((film) => (
+        <FilmItem key={film.id} {...film} />
+      ))}
+    </List>
+  </Wrapper>
 );
 
 const List = styled.ul`

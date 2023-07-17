@@ -1,20 +1,23 @@
 import { styled } from "styled-components";
 
 import { contacts } from "components/Contanct/contacts";
+import { Wrapper } from "components/Wrapper";
 import { theme } from "variables";
 
 export const Contact = () => (
-  <>
-    <Title>Get in touch</Title>
-    <Subtitle>Don't hold back...</Subtitle>
+  <Wrapper>
+    <>
+      <Title>Get in touch</Title>
+      <Subtitle>Don't hold back...</Subtitle>
 
-    {contacts.map((contact) => (
-      <div key={`${contact.text}_${contact.title}`}>
-        <TitleLink>{contact.title}</TitleLink>
-        <Link href={contact.link}>{contact.text}</Link>
-      </div>
-    ))}
-  </>
+      {contacts.map((contact) => (
+        <div key={`${contact.text}_${contact.title}`}>
+          <TitleLink>{contact.title}</TitleLink>
+          <Link href={contact.link}>{contact.text}</Link>
+        </div>
+      ))}
+    </>
+  </Wrapper>
 );
 
 const Title = styled.h2`
