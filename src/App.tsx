@@ -18,21 +18,36 @@ function App() {
     return isAuthenticated ? <Dashboard /> : <Navigate to="/login" />;
   };
 
+  const components = [
+    { path: "/", component: <FilmsList /> },
+    { path: "/films/:id", component: <Film /> },
+    { path: "/contact", component: <Contact /> },
+    { path: "/info", component: <Info /> },
+    { path: "/login", component: <LoginForm /> },
+    {
+      path: "",
+      component: <PrivateWrapper />,
+      children: [{ path: "/dashboard", component: <Dashboard /> }],
+    },
+  ];
+
   return (
     <div className="App">
       <Wrapper>
         <Container>
           <Routes>
-            {/* with navbar */}
-            <Route path="/" element={<FilmsList />} />
-            <Route path="/films/:id" element={<Film />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/info" element={<Info />} />
-            {/* routing for admin */}
-            <Route path="/login" element={<LoginForm />} />
-            <Route element={<PrivateWrapper />}>
-              <Route path="/dashboard" element={<Dashboard />} />
-            </Route>
+            {components.map((route) => (
+              <Route
+                path={route.path}
+                element={route.component}
+                children={route.children?.map((routeChild) => (
+                  <Route
+                    path={routeChild.path}
+                    element={routeChild.component}
+                  />
+                ))}
+              />
+            ))}
           </Routes>
         </Container>
       </Wrapper>
