@@ -9,7 +9,8 @@ import { FilmsList } from "components/FilmsList";
 import { Film } from "components/FilmsList/Film";
 import { Dashboard } from "components/Dashboard";
 import { Contact } from "components/Contanct";
-import { LoginForm } from "components/Login";
+import { Login } from "components/Login";
+import { Register } from "components/Register";
 import { Info } from "components/Info";
 import { theme } from "variables";
 
@@ -31,7 +32,8 @@ function App() {
             <Route path="/film/:id" element={<Film />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/info" element={<Info />} />
-            <Route path="/login" element={<LoginForm />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Container>

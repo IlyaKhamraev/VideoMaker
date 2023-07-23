@@ -2,8 +2,13 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Login = () => {
-  const [formValue, setFormValue] = useState({ email: "", password: "" });
+export const Register = () => {
+  const [formValue, setFormValue] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -13,13 +18,23 @@ export const Login = () => {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
+
     setFormValue({ ...formValue, [name]: value });
   };
 
   return (
     <Wrapper>
-      <Container>
+      <Login>
         <Form onSubmit={handleSubmit}>
+          <Label htmlFor="userName">
+            Username:
+            <Input
+              type="text"
+              value={formValue.username}
+              name="username"
+              onChange={handleChange}
+            />
+          </Label>
           <Label htmlFor="email">
             Email:
             <Input
@@ -29,7 +44,7 @@ export const Login = () => {
               onChange={handleChange}
             />
           </Label>
-          <Label htmlFor="password">
+          <Label htmlFor="passwrd">
             Password:
             <Input
               type="text"
@@ -38,13 +53,22 @@ export const Login = () => {
               onChange={handleChange}
             />
           </Label>
+          <Label htmlFor="reppassword">
+            Confirm Password:
+            <Input
+              type="text"
+              value={formValue.confirmPassword}
+              name="confirmPassword"
+              onChange={handleChange}
+            />
+          </Label>
 
-          <button>Log in</button>
+          <button>Sign up</button>
         </Form>
         <Note>
-          Not a member yet? <Link to="/register">Sign up here</Link>
+          Already a memeber? <Link to="/login">Login in here</Link>
         </Note>
-      </Container>
+      </Login>
     </Wrapper>
   );
 };
@@ -54,7 +78,7 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const Container = styled.div`
+export const Login = styled.div`
   border: 1px solid #fff;
   padding: 20px;
 `;
