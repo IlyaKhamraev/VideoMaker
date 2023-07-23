@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { styled } from "styled-components";
 
+import { ProtectedRoute } from "components/ProtectedRoute";
+import { PageNotFound } from "components/PageNotFound";
 import { Container } from "components/Container";
 import { FilmsList } from "components/FilmsList";
 import { Film } from "components/FilmsList/Film";
@@ -12,42 +14,25 @@ import { Info } from "components/Info";
 import { theme } from "variables";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
-
-  const PrivateWrapper = () => {
-    return isAuthenticated ? <Dashboard /> : <Navigate to="/login" />;
-  };
-
-  const components = [
-    { path: "/", component: <FilmsList /> },
-    { path: "/films/:id", component: <Film /> },
-    { path: "/contact", component: <Contact /> },
-    { path: "/info", component: <Info /> },
-    { path: "/login", component: <LoginForm /> },
-    {
-      path: "",
-      component: <PrivateWrapper />,
-      children: [{ path: "/dashboard", component: <Dashboard /> }],
-    },
-  ];
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <div className="App">
       <Wrapper>
         <Container>
           <Routes>
-            {components.map((route) => (
-              <Route
-                path={route.path}
-                element={route.component}
-                children={route.children?.map((routeChild) => (
-                  <Route
-                    path={routeChild.path}
-                    element={routeChild.component}
-                  />
-                ))}
-              />
-            ))}
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute element={Dashboard} loggedIn={loggedIn} />
+              }
+            />
+            <Route path="/" element={<FilmsList />} />
+            <Route path="/film/:id" element={<Film />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/info" element={<Info />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Container>
       </Wrapper>
