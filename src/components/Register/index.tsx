@@ -13,7 +13,9 @@ export const Register = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log("submit");
+    if (formValue.password === formValue.confirmPassword) {
+      console.log("отправить");
+    }
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

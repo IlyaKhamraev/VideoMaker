@@ -8,7 +8,9 @@ export const Login = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log("submit");
+    if (formValue.email !== "" && formValue.password !== "") {
+      console.log("submit");
+    }
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
