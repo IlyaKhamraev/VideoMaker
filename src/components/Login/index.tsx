@@ -1,15 +1,49 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
+import { createEffect, createStore } from "effector";
+import { useStore, useEvent } from "effector-react";
+import axios from "axios";
+
+const fetchLogin = createEffect(
+  (loginData: { email: string; password: string }) =>
+    axios
+      .post("/login", loginData, {
+        withCredentials: true,
+        baseURL: "http://localhost:8000",
+      })
+      //@ts-ignore
+      .then((req) => req.json())
+);
+
+// fetch("http://localhost:8000/login", {
+//       method: "POST",
+//       headers: {
+//         Connection: "keep-alive",
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(loginData),
+//     }
+const $user = createStore(null).on(
+  fetchLogin.doneData,
+  (state, result) => result
+);
+
+// const url: string = "http://0.0.0.0:8000/login";
 
 export const Login = () => {
   const [formValue, setFormValue] = useState({ email: "", password: "" });
+
+  const user = useStore($user);
+  // const pending = useStore(fetchLogin.pending);
+  const fetchEvent = useEvent(fetchLogin);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (formValue.email !== "" && formValue.password !== "") {
-      console.log("submit");
+      console.log("submit", "formValue", formValue);
+      fetchEvent(formValue);
     }
   };
 
@@ -17,6 +51,16 @@ export const Login = () => {
     const { name, value } = event.target;
     setFormValue({ ...formValue, [name]: value });
   };
+
+  const getuser = () =>
+    fetch("http://localhost:8000/users", {
+      method: "GET",
+      headers: {
+        Connection: "keep-alive",
+        "Content-Type": "application/json",
+        credentials: "include",
+      },
+    });
 
   return (
     <Wrapper>
@@ -43,6 +87,8 @@ export const Login = () => {
 
           <button>Log in</button>
         </Form>
+
+        <button onClick={getuser}>get users</button>
         <Note>
           Not a member yet? <Link to="/register">Sign up here</Link>
         </Note>
