@@ -5,6 +5,17 @@ import { createEffect, createStore } from "effector";
 import { useStore, useEvent } from "effector-react";
 import axios from "axios";
 
+function getCookie(name: string) {
+  let matches = document.cookie.match(
+    new RegExp(
+      "(?:^|; )" +
+        name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
+        "=([^;]*)"
+    )
+  );
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
 const fetchLogin = createEffect(
   (loginData: { email: string; password: string }) =>
     axios
@@ -53,14 +64,9 @@ export const Login = () => {
   };
 
   const getuser = () =>
-    fetch("http://localhost:8000/users", {
-      method: "GET",
-      headers: {
-        Connection: "keep-alive",
-        "Content-Type": "application/json",
-        credentials: "include",
-      },
-    });
+    axios
+      .get("http://localhost:8000/users", { withCredentials: true })
+      .catch((err) => console.log(err));
 
   return (
     <Wrapper>

@@ -10,6 +10,7 @@ import { Film } from "components/FilmsList/Film";
 import { Dashboard } from "components/Dashboard";
 import { Contact } from "components/Contanct";
 import { Login } from "components/Login";
+import { Logout } from "components/Logout";
 import { Register } from "components/Register";
 import { Info } from "components/Info";
 import { theme } from "variables";
@@ -32,7 +33,8 @@ function App() {
             <Route path="/film/:id" element={<Film />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/info" element={<Info />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/sign-in" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
