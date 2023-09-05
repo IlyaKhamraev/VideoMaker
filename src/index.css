@@ -15,7 +15,8 @@ code {
 
 @font-face {
   font-family: "opensans_bold";
-  src: url("./assets/fonts/opensans-bold.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/opensans-bold.woff2") format("woff2"),
     url("./assets/fonts/opensans-bold.woff") format("woff"),
     url("./assets/fonts/opensans-bold.svg#open_sansbold") format("svg");
   font-weight: normal;
@@ -24,7 +25,8 @@ code {
 
 @font-face {
   font-family: "opensans_regular";
-  src: url("./assets/fonts/opensans-regular.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/opensans-regular.woff2") format("woff2"),
     url("./assets/fonts/opensans-regular.woff") format("woff"),
     url("./assets/fonts/opensans-regular.svg#open_sansregular") format("svg");
   font-weight: normal;
@@ -33,7 +35,8 @@ code {
 
 @font-face {
   font-family: "opensans_semibold";
-  src: url("./assets/fonts/opensans-semibold.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/opensans-semibold.woff2") format("woff2"),
     url("./assets/fonts/opensans-semibold.woff") format("woff"),
     url("./assets/fonts/opensans-semibold.svg#open_sanssemibold") format("svg");
   font-weight: normal;
@@ -42,7 +45,8 @@ code {
 
 @font-face {
   font-family: "thunder-extraboldlc";
-  src: url("./assets/fonts/thunder-extraboldlc.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/thunder-extraboldlc.woff2") format("woff2"),
     url("./assets/fonts/thunder-extraboldlc.woff") format("woff"),
     url("./assets/fonts/thunder-extraboldlc.svg#thunder-extraboldlc")
       format("svg");

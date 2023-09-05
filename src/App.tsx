@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { styled } from "styled-components";
+import { useStore } from "effector-react";
 
 import { ProtectedRoute } from "components/ProtectedRoute";
 import { PageNotFound } from "components/PageNotFound";
@@ -14,9 +14,14 @@ import { Logout } from "components/Logout";
 import { Register } from "components/Register";
 import { Info } from "components/Info";
 import { theme } from "variables";
+import { $access } from "store/access";
+import { history } from "helpers/history";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const { isAuthenticated } = useStore($access);
+
+  history.navigate = useNavigate();
+  history.location = useLocation();
 
   return (
     <div className="App">
@@ -26,7 +31,10 @@ function App() {
             <Route
               path="/dashboard"
               element={
-                <ProtectedRoute element={Dashboard} loggedIn={loggedIn} />
+                <ProtectedRoute
+                  element={Dashboard}
+                  loggedIn={isAuthenticated}
+                />
               }
             />
             <Route path="/" element={<FilmsList />} />
