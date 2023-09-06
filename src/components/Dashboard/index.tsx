@@ -47,8 +47,6 @@ export const Dashboard: FC = () => {
     if (!file) {
       return;
     }
-
-    console.log("submit");
   };
 
   return (
