@@ -14,3 +14,12 @@ export type ModelsProfile = {
   role: Role;
   _id: Id;
 };
+
+export type Films = {
+  _id: Id;
+  promoImg: string;
+  client: string;
+  name: string;
+  category: string;
+  movie: string;
+};

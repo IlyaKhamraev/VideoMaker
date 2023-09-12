@@ -1,9 +1,12 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { styled } from "styled-components";
+import { useStore } from "effector-react";
 
-import { login } from "store/access";
+import { login, $access } from "store/access";
 
 export const Login = () => {
+  const store = useStore($access);
+
   const [formValue, setFormValue] = useState({ email: "", password: "" });
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -20,11 +23,14 @@ export const Login = () => {
     setFormValue({ ...formValue, [name]: value });
   };
 
+  console.log("store", store);
+
   return (
     <Wrapper>
       <Container>
-        <Form onSubmit={handleSubmit}>
-          <Label htmlFor="email">
+        <Title>Login</Title>
+        <Form onSubmit={handleSubmit} noValidate>
+          <Label>
             Email:
             <Input
               type="text"
@@ -33,7 +39,7 @@ export const Login = () => {
               onChange={handleChange}
             />
           </Label>
-          <Label htmlFor="password">
+          <Label>
             Password:
             <Input
               type="text"
@@ -43,7 +49,7 @@ export const Login = () => {
             />
           </Label>
 
-          <button>Log in</button>
+          <Submit>Submit</Submit>
         </Form>
       </Container>
     </Wrapper>
@@ -56,8 +62,16 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  border: 1px solid #fff;
   padding: 20px;
+  color: #000;
+  background: #fff;
+`;
+
+export const Title = styled.div`
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: 500;
 `;
 
 export const Form = styled.form`
@@ -69,11 +83,35 @@ export const Input = styled.input`
   display: flex;
   flex-direction: column;
   margin-top: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #000;
+  border-radius: 2px;
+
+  &:active,
+  &:focus {
+    outline: 2px solid #ffaa00;
+  }
 `;
 
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 20px;
+`;
+
+export const Submit = styled.button`
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: 0.4s;
+
+  &:hover {
+    background: #422b00;
+  }
 `;

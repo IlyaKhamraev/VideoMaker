@@ -1,17 +1,20 @@
+import React, { FormEvent } from "react";
 import { styled } from "styled-components";
-
 import axios from "axios";
 
 export const Logout = () => {
-  const getLogout = () =>
+  const getLogout = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
     axios
       .get("http://localhost:8000/logout", { withCredentials: true })
       .catch((err) => console.log(err));
+  };
 
   return (
     <Wrapper>
       <Container>
-        <Form onSubmit={getLogout}>
+        <Form onSubmit={getLogout} noValidate>
           <button>Logout</button>
         </Form>
       </Container>

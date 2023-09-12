@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { styled } from "styled-components";
 import { useStore } from "effector-react";
@@ -16,9 +17,14 @@ import { Info } from "components/Info";
 import { theme } from "variables";
 import { $access } from "store/access";
 import { history } from "helpers/history";
+import { getFilms } from "store/films";
 
 function App() {
-  const { isAuthenticated } = useStore($access);
+  const store = useStore($access);
+
+  useEffect(() => {
+    getFilms();
+  }, []);
 
   history.navigate = useNavigate();
   history.location = useLocation();
@@ -33,7 +39,7 @@ function App() {
               element={
                 <ProtectedRoute
                   element={Dashboard}
-                  loggedIn={isAuthenticated}
+                  loggedIn={store.isAuthenticated}
                 />
               }
             />
@@ -41,7 +47,7 @@ function App() {
             <Route path="/film/:id" element={<Film />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/info" element={<Info />} />
-            <Route path="/sign-in" element={<Login />} />
+            <Route path="/Login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<PageNotFound />} />

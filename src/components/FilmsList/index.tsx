@@ -1,18 +1,28 @@
 import { styled } from "styled-components";
+import { useStore } from "effector-react";
 
 import { FilmItem } from "components/FilmsList/FilmItem";
-import { films } from "components/FilmsList/constants";
+// import { films } from "components/FilmsList/constants";
 import { Wrapper } from "components/Wrapper";
+import { $films } from "store/films";
 
-export const FilmsList = () => (
-  <Wrapper>
-    <List>
-      {films.map((film) => (
-        <FilmItem key={film.id} {...film} />
-      ))}
-    </List>
-  </Wrapper>
-);
+export const FilmsList = () => {
+  const { films } = useStore($films);
+
+  if (!films) {
+    return <div>loading</div>;
+  }
+  return (
+    <Wrapper>
+      <List>
+        {films.map((film) => (
+          //@ts-ignore
+          <FilmItem key={film._id} {...film} />
+        ))}
+      </List>
+    </Wrapper>
+  );
+};
 
 const List = styled.ul`
   display: grid;

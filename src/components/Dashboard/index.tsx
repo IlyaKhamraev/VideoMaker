@@ -1,5 +1,6 @@
 import React, { FC, useState, ChangeEvent, FormEvent } from "react";
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 interface FormValues {
   name: string;
@@ -51,6 +52,8 @@ export const Dashboard: FC = () => {
 
   return (
     <Wrapper>
+      <Link to="/">на главную</Link>
+
       <TableContainer>
         <div>
           <Form onSubmit={handleSubmit}>

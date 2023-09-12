@@ -7,4 +7,4 @@ interface Props {
 }
 
 export const ProtectedRoute: FC<Props> = ({ element: Component, loggedIn }) =>
-  loggedIn ? <Component /> : <Navigate to="/sign-in" replace />;
+  loggedIn ? <Component /> : <Navigate to="/login" replace />;

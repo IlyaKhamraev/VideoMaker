@@ -43,13 +43,16 @@ export const logout = createEffect(async () => {
 });
 
 export const $access = createStore<State>(initialState)
-  .on(login.doneData, (state, payload): State => {
-    return { ...state, isAuthenticated: true, profile: payload.data };
-  })
-  .on(logout.doneData, (state) => {
-    return {
+  .on(
+    login.doneData,
+    (state, payload): State => ({
       ...state,
-      isAuthenticated: false,
-      profile: null,
-    };
-  });
+      isAuthenticated: true,
+      profile: payload.data,
+    })
+  )
+  .on(logout.doneData, (state) => ({
+    ...state,
+    isAuthenticated: false,
+    profile: null,
+  }));
