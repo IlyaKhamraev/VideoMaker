@@ -1,14 +1,13 @@
 import React, { FormEvent } from "react";
 import { styled } from "styled-components";
-import axios from "axios";
+
+import { logout } from "store/access";
 
 export const Logout = () => {
   const getLogout = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    axios
-      .get("http://localhost:8000/logout", { withCredentials: true })
-      .catch((err) => console.log(err));
+    logout();
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { FC, useState, ChangeEvent, FormEvent } from "react";
+import { FC, useState, ChangeEvent, FormEvent } from "react";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -52,7 +52,14 @@ export const Dashboard: FC = () => {
 
   return (
     <Wrapper>
-      <Link to="/">на главную</Link>
+      <Nav>
+        <div>
+          <Link to="/">На главную</Link>
+        </div>
+        <div>
+          <Link to="/logout">Выйти</Link>
+        </div>
+      </Nav>
 
       <TableContainer>
         <div>
@@ -132,6 +139,10 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background: #fff;
+`;
+
+const Nav = styled.div`
+  display: flex;
 `;
 
 const Form = styled.form`

@@ -2,7 +2,6 @@ import { createEffect, createStore } from "effector";
 import axios from "axios";
 
 import { ModelsProfile, Auth } from "types";
-
 import { history } from "helpers/history";
 
 type State = {
@@ -40,6 +39,13 @@ export const logout = createEffect(async () => {
   const response = await axios.get("/logout", options);
 
   return response;
+});
+
+logout.done.watch((data) => {
+  console.log("tyt");
+  if (history && history.navigate) {
+    history?.navigate("/");
+  }
 });
 
 export const $access = createStore<State>(initialState)

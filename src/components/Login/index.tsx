@@ -1,12 +1,9 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { styled } from "styled-components";
-import { useStore } from "effector-react";
 
-import { login, $access } from "store/access";
+import { login } from "store/access";
 
 export const Login = () => {
-  const store = useStore($access);
-
   const [formValue, setFormValue] = useState({ email: "", password: "" });
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -22,8 +19,6 @@ export const Login = () => {
 
     setFormValue({ ...formValue, [name]: value });
   };
-
-  console.log("store", store);
 
   return (
     <Wrapper>

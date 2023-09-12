@@ -27,7 +27,7 @@ export const FilmItem: FC<Props> = ({
   category,
 }) => (
   <Wrapper>
-    <LinkWrapper to={`films/${id}`}>
+    <LinkWrapper to={`film/${id}`}>
       <FilmImg>
         <Img src={promoImg} alt="promo" />
       </FilmImg>

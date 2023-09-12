@@ -13,7 +13,7 @@ const ContainerWrapper = styled.div`
   display: flex;
   overflow: visible;
   margin: 0 auto;
-  padding-right: 20px;
+  // padding-right: 20px;
   justify-content: center;
   height: 100%;
   width: 100%;
