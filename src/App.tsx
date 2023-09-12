@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { styled } from "styled-components";
 import { useStore } from "effector-react";
-import { Link } from "react-router-dom";
-import { RxDashboard } from "react-icons/rx";
 
 import { ProtectedRoute } from "components/ProtectedRoute";
 import { PageNotFound } from "components/PageNotFound";
@@ -34,12 +32,6 @@ function App() {
   return (
     <div className="App">
       <Wrapper>
-        {isAuthenticated && (
-          <Settings to="/dashboard">
-            <RxDashboard />
-          </Settings>
-        )}
-
         <Container>
           <Routes>
             <Route
@@ -67,19 +59,6 @@ function App() {
 }
 
 export default App;
-
-const Settings = styled(Link)`
-  position: fixed;
-  right: 5%;
-  top: 5%;
-  color: ${theme.colors.white};
-  font-size: 24px;
-  transition: 0.4s;
-
-  &:hover {
-    color: ${theme.colors.primary};
-  }
-`;
 
 const Wrapper = styled.div`
   width: 100%;

@@ -1,14 +1,20 @@
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useStore } from "effector-react";
 
-import { NavItem } from "components/Navbar/Navitem";
+import { $access } from "store/access";
+import { NavItem } from "components/Navbar/NavItem";
 import { paths } from "components/Navbar/constants";
 import { Social } from "components/Social";
 import { theme } from "variables";
 
 export const Navbar = () => {
+  const { isAuthenticated } = useStore($access);
+
   const location = useLocation();
+
+  console.log(location.pathname);
 
   return (
     <Wrapper>
@@ -18,13 +24,17 @@ export const Navbar = () => {
         </Header>
         <Navigation>
           <Routes>
-            {paths.map((route) => (
-              <NavItem
-                {...route}
-                key={route.name}
-                active={location.pathname === route.path}
-              />
-            ))}
+            {paths
+              .filter(
+                ({ onlyAdmin }) => onlyAdmin === isAuthenticated || !onlyAdmin
+              )
+              .map((route) => (
+                <NavItem
+                  {...route}
+                  key={route.name}
+                  active={location.pathname === route.path}
+                />
+              ))}
           </Routes>
           <Social />
         </Navigation>

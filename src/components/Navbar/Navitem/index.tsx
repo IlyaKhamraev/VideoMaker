@@ -10,16 +10,19 @@ interface Props {
   active: boolean;
 }
 
-export const NavItem: FC<Props> = ({ path, name }) => {
-  return (
-    <RoutesItem>
-      <RoutesItemLink to={path}>{name}</RoutesItemLink>
-    </RoutesItem>
-  );
-};
+export const NavItem: FC<Props> = ({ path, name, active }) => (
+  <RoutesItem active={active}>
+    <RoutesItemLink to={path}>{name}</RoutesItemLink>
+  </RoutesItem>
+);
 
-const RoutesItem = styled.li`
+const RoutesItem = styled.li<{ active?: boolean }>`
   margin-bottom: 8px;
+
+  a {
+    color: ${(props) =>
+      props.active ? theme.colors.primary : theme.colors.white};
+  }
 `;
 
 const RoutesItemLink = styled(Link)`
