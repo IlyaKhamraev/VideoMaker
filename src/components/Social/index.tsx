@@ -1,19 +1,12 @@
-import { styled } from "styled-components";
-
 import { social } from "components/Social/constants";
 import { ListItem } from "components/Social/Item";
 
+import styles from "components/Social/styles.module.css";
+
 export const Social = () => (
-  <List>
+  <ul className={styles.list}>
     {social.map((item) => (
       <ListItem key={item.id} {...item} />
     ))}
-  </List>
+  </ul>
 );
-
-export const List = styled.ul`
-  display: flex;
-  margin-bottom: 0;
-  align-items: stretch;
-  margin-top: 80px;
-`;

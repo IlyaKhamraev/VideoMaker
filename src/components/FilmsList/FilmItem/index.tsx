@@ -1,15 +1,7 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
-import {
-  Wrapper,
-  LinkWrapper,
-  FilmImg,
-  Img,
-  Client,
-  Content,
-  Name,
-  Category,
-} from "components/FilmsList/FilmItem/styles";
+import styles from "components/FilmsList/FilmItem/styles.module.css";
 
 interface Props {
   id: number;
@@ -26,16 +18,16 @@ export const FilmItem: FC<Props> = ({
   name,
   category,
 }) => (
-  <Wrapper>
-    <LinkWrapper to={`film/${id}`}>
-      <FilmImg>
-        <Img src={promoImg} alt="promo" />
-      </FilmImg>
-      <Content>
-        <Client>{client}</Client>
-        <Name>{name}</Name>
-        <Category>{category}</Category>
-      </Content>
-    </LinkWrapper>
-  </Wrapper>
+  <li className={styles.wrapper}>
+    <Link className={styles.linkWrapper} to={`film/${id}`}>
+      <div className={styles.filmImg}>
+        <img className={styles.img} src={promoImg} alt="promo" />
+      </div>
+      <div className={styles.content}>
+        <p className={styles.client}>{client}</p>
+        <p className={styles.name}>{name}</p>
+        <p className={styles.category}>{category}</p>
+      </div>
+    </Link>
+  </li>
 );

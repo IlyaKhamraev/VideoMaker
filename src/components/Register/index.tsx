@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-import { styled } from "styled-components";
 import { Link } from "react-router-dom";
+
+import styles from "components/Register/styles.module.css";
 
 export const Register = () => {
   const [formValue, setFormValue] = useState({
@@ -25,88 +26,56 @@ export const Register = () => {
   };
 
   return (
-    <Wrapper>
-      <Login>
-        <Form onSubmit={handleSubmit}>
-          <Label htmlFor="userName">
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <label className={styles.label}>
             Username:
-            <Input
+            <input
+              className={styles.input}
               type="text"
               value={formValue.username}
               name="username"
               onChange={handleChange}
             />
-          </Label>
-          <Label htmlFor="email">
+          </label>
+          <label className={styles.label}>
             Email:
-            <Input
+            <input
+              className={styles.input}
               type="text"
               value={formValue.email}
               name="email"
               onChange={handleChange}
             />
-          </Label>
-          <Label htmlFor="passwrd">
+          </label>
+          <label className={styles.label}>
             Password:
-            <Input
+            <input
+              className={styles.input}
               type="text"
               value={formValue.password}
               name="password"
               onChange={handleChange}
             />
-          </Label>
-          <Label htmlFor="reppassword">
+          </label>
+          <label className={styles.label}>
             Confirm Password:
-            <Input
+            <input
+              className={styles.input}
               type="text"
               value={formValue.confirmPassword}
               name="confirmPassword"
               onChange={handleChange}
             />
-          </Label>
+          </label>
 
           <button>Sign up</button>
-        </Form>
-        <Note>
+        </form>
+        <div className={styles.note}>
           Already a memeber? <Link to="/login">Login in here</Link>
-        </Note>
-      </Login>
-    </Wrapper>
+        </div>
+      </div>
+    </div>
   );
 };
-
-export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const Login = styled.div`
-  border: 1px solid #fff;
-  padding: 20px;
-`;
-
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Input = styled.input`
-  display: flex;
-  flex-direction: column;
-  margin-top: 5px;
-`;
-
-export const Label = styled.label`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-`;
-
-export const Note = styled.div`
-  margin-top: 20px;
-
-  a {
-    text-decoration: underline;
-  }
-`;

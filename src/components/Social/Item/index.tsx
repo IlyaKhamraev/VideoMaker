@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Wrapper, Link } from "components/Social/Item/styles";
+import styles from "components/Social/Item/styles.module.css";
 interface Props {
   icon: JSX.Element;
   path: string;
@@ -9,9 +9,9 @@ interface Props {
 }
 
 export const ListItem: FC<Props> = ({ icon, path }) => (
-  <Wrapper>
-    <Link href={path} target="_blank">
+  <li className={styles.wrapper}>
+    <a className={styles.link} href={path} target="_blank" rel="noreferrer">
       {icon}
-    </Link>
-  </Wrapper>
+    </a>
+  </li>
 );

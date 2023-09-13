@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { styled } from "styled-components";
+import classNames from "classnames";
 
-import { theme } from "variables";
+import styles from "components/Navbar/NavItem/styles.module.css";
 
 interface Props {
   path: string;
@@ -11,31 +11,11 @@ interface Props {
 }
 
 export const NavItem: FC<Props> = ({ path, name, active }) => {
-  const isActive = active ? "active" : "";
-
   return (
-    <RoutesItem active={isActive}>
-      <RoutesItemLink to={path}>{name}</RoutesItemLink>
-    </RoutesItem>
+    <div className={classNames(styles.navItem, { active: active })}>
+      <Link className={styles.navItemLink} to={path}>
+        {name}
+      </Link>
+    </div>
   );
 };
-
-const RoutesItem = styled.li<{ active?: string }>`
-  margin-bottom: 8px;
-
-  a {
-    color: ${(props) =>
-      props.active ? theme.colors.primary : theme.colors.white};
-  }
-`;
-
-const RoutesItemLink = styled(Link)`
-  transition: 0.4s;
-  color: ${theme.colors.white};
-  font-family: "rg-standardbold", sans-serif;
-  font-size: ${theme.size.md}px;
-
-  &:hover {
-    color: ${theme.colors.primary};
-  }
-`;

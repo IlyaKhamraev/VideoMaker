@@ -1,0 +1,18 @@
+.wrapper {
+  margin-right: 8px;
+}
+
+.wrapper:last-child {
+  margin-right: 0;
+}
+
+.link {
+  transition: 0.4s;
+  font-size: 20px;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--primary-color);
+}

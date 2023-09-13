@@ -1,0 +1,6 @@
+.list {
+  display: flex;
+  margin-bottom: 0;
+  align-items: stretch;
+  margin-top: 80px;
+}

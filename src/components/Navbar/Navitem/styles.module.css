@@ -1,0 +1,18 @@
+.navItem {
+  margin-bottom: 8px;
+}
+
+.navItem.active {
+  color: var(--primary-color);
+}
+
+.navItemLink {
+  transition: 0.4s;
+  color: var(--white-color);
+  font-family: "rg-standardbold", sans-serif;
+  font-size: 18px;
+}
+
+.navItemLink:hover {
+  color: var(--primary-color);
+}

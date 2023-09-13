@@ -1,0 +1,15 @@
+.content {
+  display: flex;
+  width: 764px;
+  padding-top: 6vw;
+  padding-bottom: 6vw;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.alignBlock {
+  position: relative;
+  overflow: visible;
+  padding-top: 16px;
+  flex: 1;
+}

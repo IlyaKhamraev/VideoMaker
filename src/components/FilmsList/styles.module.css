@@ -1,0 +1,10 @@
+.list {
+  display: grid;
+  justify-items: stretch;
+  grid-auto-flow: row dense;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 2vw;
+  grid-row-gap: 3vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}

@@ -1,7 +1,8 @@
 import { FC, useState, ChangeEvent, FormEvent } from "react";
-import { styled } from "styled-components";
 import { Link } from "react-router-dom";
+import { logout } from "store/access";
 
+import styles from "components/Dashboard/styles.module.css";
 interface FormValues {
   name: string;
   nameCompany: string;
@@ -50,21 +51,25 @@ export const Dashboard: FC = () => {
     }
   };
 
+  const getLogout = () => {
+    logout();
+  };
+
   return (
-    <Wrapper>
-      <Nav>
+    <div className={styles.wrapper}>
+      <div className={styles.nav}>
         <div>
           <Link to="/">На главную</Link>
         </div>
         <div>
-          <Link to="/logout">Выйти</Link>
+          <button onClick={getLogout}>Выйти</button>
         </div>
-      </Nav>
+      </div>
 
-      <TableContainer>
+      <div className={styles.tableContainer}>
         <div>
-          <Form onSubmit={handleSubmit}>
-            <label htmlFor="">
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <label>
               Название ролика
               <input
                 value={form.name}
@@ -73,7 +78,7 @@ export const Dashboard: FC = () => {
                 onChange={handleChange}
               />
             </label>
-            <label htmlFor="">
+            <label>
               Название компании
               <input
                 value={form.nameCompany}
@@ -82,7 +87,7 @@ export const Dashboard: FC = () => {
                 onChange={handleChange}
               />
             </label>
-            <label htmlFor="">
+            <label>
               Название события
               <input
                 value={form.nameEvent}
@@ -91,7 +96,7 @@ export const Dashboard: FC = () => {
                 onChange={handleChange}
               />
             </label>
-            <label htmlFor="">
+            <label>
               О ролике
               <input
                 value={form.about}
@@ -100,7 +105,7 @@ export const Dashboard: FC = () => {
                 onChange={handleChange}
               />
             </label>
-            <label htmlFor="">
+            <label>
               Ссылка на ролик
               <input
                 value={form.link}
@@ -109,15 +114,15 @@ export const Dashboard: FC = () => {
                 onChange={handleChange}
               />
             </label>
-            <label htmlFor="">
+            <label>
               Загрузить превью
               <input name="preview" type="file" onChange={handleChangeFile} />
             </label>
             <button>Отправить</button>
-          </Form>
+          </form>
         </div>
 
-        <Table>
+        {/* <Table>
           <caption>Our Client Data</caption>
           <tr>
             <th>Id</th>
@@ -129,58 +134,8 @@ export const Dashboard: FC = () => {
             <th>Ссылка на ролик</th>
             <th>Управление</th>
           </tr>
-        </Table>
-      </TableContainer>
-    </Wrapper>
+        </Table> */}
+      </div>
+    </div>
   );
 };
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  background: #fff;
-`;
-
-const Nav = styled.div`
-  display: flex;
-`;
-
-const Form = styled.form`
-  color: #000;
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  border: 1px solid #000;
-  padding: 20px;
-
-  > label {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
-const TableContainer = styled.div`
-  overflow-x: auto;
-`;
-
-const Table = styled.table`
-  width: 70%;
-  border-collapse: collapse;
-  margin: auto;
-  caption-side: top;
-  empty-cells: hide;
-  table-layout: auto;
-  color: #000;
-  border: 1px solid #000;
-
-  > th,
-  th {
-    padding: 15px;
-    text-align: left;
-  }
-
-  > tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-`;

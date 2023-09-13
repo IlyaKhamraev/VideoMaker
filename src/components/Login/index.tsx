@@ -1,7 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-import { styled } from "styled-components";
 
 import { login } from "store/access";
+
+import styles from "components/Login/styles.module.css";
 
 export const Login = () => {
   const [formValue, setFormValue] = useState({ email: "", password: "" });
@@ -21,92 +22,34 @@ export const Login = () => {
   };
 
   return (
-    <Wrapper>
-      <Container>
-        <Title>Login</Title>
-        <Form onSubmit={handleSubmit} noValidate>
-          <Label>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.title}>Login</div>
+        <form className={styles.form} onSubmit={handleSubmit} noValidate>
+          <label className={styles.label}>
             Email:
-            <Input
+            <input
               type="text"
-              value={formValue.email}
               name="email"
+              value={formValue.email}
               onChange={handleChange}
+              className={styles.input}
             />
-          </Label>
-          <Label>
+          </label>
+          <label className={styles.label}>
             Password:
-            <Input
+            <input
               type="text"
-              value={formValue.password}
               name="password"
+              value={formValue.password}
               onChange={handleChange}
+              className={styles.input}
             />
-          </Label>
+          </label>
 
-          <Submit>Submit</Submit>
-        </Form>
-      </Container>
-    </Wrapper>
+          <button className={styles.submit}>Submit</button>
+        </form>
+      </div>
+    </div>
   );
 };
-
-export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const Container = styled.div`
-  padding: 20px;
-  color: #000;
-  background: #fff;
-`;
-
-export const Title = styled.div`
-  font-size: 24px;
-  color: #000;
-  margin-bottom: 20px;
-  font-weight: 500;
-`;
-
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Input = styled.input`
-  display: flex;
-  flex-direction: column;
-  margin-top: 5px;
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 1px solid #000;
-  border-radius: 2px;
-
-  &:active,
-  &:focus {
-    outline: 2px solid #ffaa00;
-  }
-`;
-
-export const Label = styled.label`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-`;
-
-export const Submit = styled.button`
-  background: #000;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 2px;
-  transition: 0.4s;
-
-  &:hover {
-    background: #422b00;
-  }
-`;
