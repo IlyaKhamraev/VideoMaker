@@ -15,16 +15,25 @@ import { Logout } from "components/Logout";
 import { Register } from "components/Register";
 import { Info } from "components/Info";
 import { theme } from "variables";
-import { $access } from "store/access";
+import { $access, getProfile } from "store/access";
 import { history } from "helpers/history";
-import { getFilms } from "store/films";
+import { $films, getFilms } from "store/films";
 
 function App() {
-  const { isAuthenticated } = useStore($access);
+  const { profile, isAuthenticated } = useStore($access);
+  const { films } = useStore($films);
 
   useEffect(() => {
-    getFilms();
-  }, []);
+    if (!films?.length) {
+      getFilms();
+    }
+  }, [films]);
+
+  useEffect(() => {
+    if (!profile) {
+      getProfile();
+    }
+  }, [profile]);
 
   history.navigate = useNavigate();
   history.location = useLocation();

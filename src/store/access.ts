@@ -8,12 +8,14 @@ type State = {
   isAuthenticated: boolean;
   profile: ModelsProfile | null;
   loading: boolean;
+  error: string | null;
 };
 
 const initialState: State = {
   isAuthenticated: false,
   profile: null,
   loading: false,
+  error: null,
 };
 
 const baseURL = `http://localhost:8000`;
@@ -29,7 +31,7 @@ export const login = createEffect(async (authData: Auth) => {
   return response;
 });
 
-login.done.watch((data) => {
+login.done.watch(() => {
   if (history && history.navigate) {
     history?.navigate("/dashboard");
   }
@@ -41,16 +43,29 @@ export const logout = createEffect(async () => {
   return response;
 });
 
-logout.done.watch((data) => {
-  console.log("tyt");
+logout.done.watch(() => {
   if (history && history.navigate) {
     history?.navigate("/");
   }
 });
 
+export const getProfile = createEffect(async () => {
+  const response = await axios.get("/profile", options);
+
+  return response;
+});
+
 export const $access = createStore<State>(initialState)
   .on(
     login.doneData,
+    (state, payload): State => ({
+      ...state,
+      isAuthenticated: true,
+      profile: payload.data,
+    })
+  )
+  .on(
+    getProfile.doneData,
     (state, payload): State => ({
       ...state,
       isAuthenticated: true,

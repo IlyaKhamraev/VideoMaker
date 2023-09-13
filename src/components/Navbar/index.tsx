@@ -14,8 +14,6 @@ export const Navbar = () => {
 
   const location = useLocation();
 
-  console.log(location.pathname);
-
   return (
     <Wrapper>
       <Content>
