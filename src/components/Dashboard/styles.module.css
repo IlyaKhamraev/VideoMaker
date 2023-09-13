@@ -4,25 +4,52 @@
   background: var(--white-color);
 }
 
-.nav {
-  display: flex;
+.header {
+  background: var(--black-color);
 }
 
-.form {
-  color: var(--black-color);
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  border: 1px solid var(--black-color);
-  padding: 20px;
-}
-
-.form label {
+.tabs {
+  padding-top: 20px;
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
 }
 
-.tableContainer {
-  overflow-x: auto;
+.tab {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nav {
+  padding: 20px;
+  background: var(--black-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLink {
+  transition: 0.4s;
+  color: var(--white-color);
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+}
+
+.logout {
+  transition: 0.4s;
+  padding: 8px 12px;
+  background: var(--white-color);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: var(--primary-color);
 }

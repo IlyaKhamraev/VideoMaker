@@ -1,0 +1,14 @@
+.form {
+  color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  border: 1px solid var(--black-color);
+  padding: 20px;
+}
+
+.form label {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
