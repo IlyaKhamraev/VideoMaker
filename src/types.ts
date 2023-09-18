@@ -15,11 +15,18 @@ export type ModelsProfile = {
   _id: Id;
 };
 
-export type Films = {
-  _id: Id;
-  promoImg: string;
-  client: string;
+export type Film = {
+  _id?: Id;
   name: string;
-  category: string;
-  movie: string;
+  client: string;
+  event: string;
+  description: string;
+  previewImg: File | null;
+  vimeo: string;
 };
+// name: string;
+// client: string;
+// event: string;
+// description: string;
+// vimeo: string;
+// previewImg: File | null;

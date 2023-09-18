@@ -1,23 +1,24 @@
 import { FC, useState, ChangeEvent, useRef } from "react";
+import { createFilm } from "store/films";
 
 import { useOutsideClick } from "hooks/useOutsideClick";
 import styles from "components/forms/FilmForm/styles.module.css";
 
 interface FormValues {
   name: string;
-  nameCompany: string;
-  nameEvent: string;
-  about: string;
-  link: string;
+  client: string;
+  event: string;
+  description: string;
+  vimeo: string;
   previewImg: File | null;
 }
 
 const initialState: FormValues = {
   name: "",
-  nameCompany: "",
-  nameEvent: "",
-  about: "",
-  link: "",
+  client: "",
+  event: "",
+  description: "",
+  vimeo: "",
   previewImg: null,
 };
 
@@ -32,11 +33,10 @@ type Props = {
 };
 
 export const FilmForm: FC<Props> = ({ onClose }) => {
+  const [form, setForm] = useState(initialState);
   const modalRef = useRef<HTMLDivElement>(null);
 
   useOutsideClick(modalRef, onClose);
-
-  const [form, setForm] = useState(initialState);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -49,9 +49,14 @@ export const FilmForm: FC<Props> = ({ onClose }) => {
   };
 
   const handleSubmit = () => {
-    if (!isCheckEmptyValues(form)) {
-      return;
-    }
+    createFilm(form).then((el) => {
+      if (el.status === 200) {
+        onClose();
+      }
+    });
+    // if (!isCheckEmptyValues(form)) {
+    //   return;
+    // }
   };
 
   return (
@@ -67,11 +72,11 @@ export const FilmForm: FC<Props> = ({ onClose }) => {
         />
       </label>
       <label>
-        Название компании
+        Название компании клиента
         <input
           className={styles.input}
-          value={form.nameCompany}
-          name="nameCompany"
+          value={form.client}
+          name="client"
           type="text"
           onChange={handleChange}
         />
@@ -80,8 +85,8 @@ export const FilmForm: FC<Props> = ({ onClose }) => {
         Название события
         <input
           className={styles.input}
-          value={form.nameEvent}
-          name="nameEvent"
+          value={form.event}
+          name="event"
           type="text"
           onChange={handleChange}
         />
@@ -90,8 +95,8 @@ export const FilmForm: FC<Props> = ({ onClose }) => {
         О ролике
         <input
           className={styles.input}
-          value={form.about}
-          name="about"
+          value={form.description}
+          name="description"
           type="text"
           onChange={handleChange}
         />
@@ -101,8 +106,8 @@ export const FilmForm: FC<Props> = ({ onClose }) => {
         <input
           className={styles.input}
           placeholder="https://player.vimeo.com/video/732441603?h=c390550b24"
-          value={form.link}
-          name="link"
+          value={form.vimeo}
+          name="vimeo"
           type="text"
           onChange={handleChange}
         />

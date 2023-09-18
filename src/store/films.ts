@@ -1,10 +1,10 @@
 import { createEffect, createStore } from "effector";
 import axios from "axios";
 
-import { Films } from "types";
+import { Film } from "types";
 
 type State = {
-  films: Films[] | null;
+  films: Film[] | null;
   loading: boolean;
 };
 
@@ -22,6 +22,12 @@ const options = {
 
 export const getFilms = createEffect(async () => {
   const response = await axios.get("/films", options);
+
+  return response;
+});
+
+export const createFilm = createEffect(async (data: Film) => {
+  const response = await axios.post("/film", data, options);
 
   return response;
 });
