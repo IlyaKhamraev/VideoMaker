@@ -2,7 +2,7 @@ export const films = [
   {
     promoImg:
       "https://uploads-ssl.webflow.com/5d71994f994c3aab41b95759/62da8c07e97efb1eeb5410bd_1920.webp",
-    video: "https://player.vimeo.com/video/732441603?h=c390550b24",
+    vimeo: "https://player.vimeo.com/video/732441603?h=c390550b24",
     client: "Ninja Tune",
     name: "Bicep Global LS II | Saatchi Gallery",
     category: "Live Stream",
@@ -13,7 +13,7 @@ export const films = [
   {
     promoImg:
       "https://uploads-ssl.webflow.com/5d71994f994c3aab41b95759/62da8c07e97efb1eeb5410bd_1920.webp",
-    video: "https://player.vimeo.com/video/732441603?h=c390550b24",
+    vimeo: "https://player.vimeo.com/video/732441603?h=c390550b24",
     client: "Ninja Tune",
     name: "Bicep Global LS II | Saatchi Gallery",
     category: "Live Stream",
@@ -24,7 +24,7 @@ export const films = [
   {
     promoImg:
       "https://uploads-ssl.webflow.com/5d71994f994c3aab41b95759/62da8c07e97efb1eeb5410bd_1920.webp",
-    video: "https://player.vimeo.com/video/732441603?h=c390550b24",
+    vimeo: "https://player.vimeo.com/video/732441603?h=c390550b24",
     client: "Ninja Tune",
     name: "Bicep Global LS II | Saatchi Gallery",
     category: "Live Stream",
@@ -35,7 +35,7 @@ export const films = [
   {
     promoImg:
       "https://uploads-ssl.webflow.com/5d71994f994c3aab41b95759/62da8c07e97efb1eeb5410bd_1920.webp",
-    video: "https://player.vimeo.com/video/732441603?h=c390550b24",
+    vimeo: "https://player.vimeo.com/video/732441603?h=c390550b24",
     client: "Ninja Tune",
     name: "Bicep Global LS II | Saatchi Gallery",
     category: "Live Stream",
@@ -46,7 +46,7 @@ export const films = [
   {
     promoImg:
       "https://uploads-ssl.webflow.com/5d71994f994c3aab41b95759/62da8c07e97efb1eeb5410bd_1920.webp",
-    video: "https://player.vimeo.com/video/732441603?h=c390550b24",
+    vimeo: "https://player.vimeo.com/video/732441603?h=c390550b24",
     client: "Ninja Tune",
     name: "Bicep Global LS II | Saatchi Gallery",
     category: "Live Stream",
@@ -57,7 +57,7 @@ export const films = [
   {
     promoImg:
       "https://uploads-ssl.webflow.com/5d71994f994c3aab41b95759/62da8c07e97efb1eeb5410bd_1920.webp",
-    video: "https://player.vimeo.com/video/732441603?h=c390550b24",
+    vimeo: "https://player.vimeo.com/video/732441603?h=c390550b24",
     client: "Ninja Tune",
     name: "Bicep Global LS II | Saatchi Gallery",
     category: "Live Stream",
@@ -68,7 +68,7 @@ export const films = [
   {
     promoImg:
       "https://uploads-ssl.webflow.com/5d71994f994c3aab41b95759/62da8c07e97efb1eeb5410bd_1920.webp",
-    video: "https://player.vimeo.com/video/732441603?h=c390550b24",
+    vimeo: "https://player.vimeo.com/video/732441603?h=c390550b24",
     client: "Ninja Tune",
     name: "Bicep Global LS II | Saatchi Gallery",
     category: "Live Stream",
@@ -79,7 +79,7 @@ export const films = [
   {
     promoImg:
       "https://uploads-ssl.webflow.com/5d71994f994c3aab41b95759/62da8c07e97efb1eeb5410bd_1920.webp",
-    video: "https://player.vimeo.com/video/732441603?h=c390550b24",
+    vimeo: "https://player.vimeo.com/video/732441603?h=c390550b24",
     client: "Ninja Tune",
     name: "Bicep Global LS II | Saatchi Gallery",
     category: "Live Stream",

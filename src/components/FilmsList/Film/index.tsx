@@ -17,7 +17,7 @@ export const Film = () => {
           <iframe
             title="video"
             className={styles.frame}
-            src={film && film.video}
+            src={film && film.vimeo}
             allow="autoplay; fullscreen; picture-in-picture"
             frameBorder="none"
             allowFullScreen
