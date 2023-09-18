@@ -1,6 +1,7 @@
 .content {
   display: flex;
-  width: 764px;
+  max-width: 764px;
+  width: 100%;
   padding-top: 6vw;
   padding-bottom: 6vw;
   align-items: center;

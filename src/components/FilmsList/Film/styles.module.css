@@ -1,0 +1,51 @@
+.video {
+  padding: 56.25% 0 0 0;
+  position: relative;
+}
+
+.frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.padding {
+  padding: 20px 0;
+}
+
+.mb12 {
+  margin-bottom: var(--INDENT_12);
+}
+
+.client {
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--primary-color);
+}
+
+.name {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: var(--white-color);
+}
+
+.category {
+  color: var(--g100-color);
+}
+
+.description {
+  font-size: 16px;
+  letter-spacing: 0.35px;
+  line-height: 1;
+  color: var(--white-color);
+}

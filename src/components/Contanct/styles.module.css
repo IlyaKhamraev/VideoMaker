@@ -1,5 +1,5 @@
 .title {
-  margin-top: 8px;
+  margin-top: var(--INDENT_8);
   margin-bottom: 20px;
   opacity: 1;
   font-size: 28px;
@@ -18,8 +18,11 @@
   cursor: default;
 }
 
+.mb12 {
+  margin-bottom: var(--INDENT_12);
+}
+
 .titleLink {
-  margin-bottom: 10px;
   font-size: 24px;
   font-family: "thunder-extraboldlc", sans-serif;
   color: var(--white-color);

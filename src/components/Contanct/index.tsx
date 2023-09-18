@@ -10,7 +10,7 @@ export const Contact = () => (
       <p className={styles.subtitle}>Don't hold back...</p>
 
       {contacts.map((contact) => (
-        <div key={`${contact.text}_${contact.title}`}>
+        <div className={styles.mb12} key={`${contact.text}_${contact.title}`}>
           <p className={styles.titleLink}>{contact.title}</p>
           <a className={styles.link} href={contact.link}>
             {contact.text}

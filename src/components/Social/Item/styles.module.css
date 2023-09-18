@@ -1,5 +1,5 @@
 .wrapper {
-  margin-right: 8px;
+  margin-right: var(--INDENT_8);
 }
 
 .wrapper:last-child {
