@@ -16,6 +16,10 @@
   color: var(--primary-color);
 }
 
+.linkWrapper:hover .playLink {
+  bottom: 10px;
+}
+
 .filmImg {
   position: relative;
   overflow: hidden;
@@ -70,4 +74,28 @@
   text-transform: uppercase;
   font-family: "thunder-extraboldlc", sans-serif;
   color: var(--white-color);
+}
+
+.playLink {
+  position: absolute;
+  transition: 0.5s;
+  bottom: -1000px;
+  left: 10px;
+}
+
+.playLink:hover .play {
+  background: rgb(255, 201, 58, 0.8);
+}
+
+.play {
+  transition: background 0.3s;
+  background: rgb(255, 255, 255, 0.8);
+  width: 70px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: center;
+  border-radius: 0 10px 0 10px;
+  color: var(--black-color);
+  font-size: 24px;
 }
