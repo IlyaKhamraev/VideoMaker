@@ -46,7 +46,7 @@ export const Dashboard: FC = () => {
       </div>
       {showModal &&
         createPortal(
-          <Modal onClose={toggleModal} children={<FilmForm />} />,
+          <Modal children={<FilmForm onClose={toggleModal} />} />,
           document.body
         )}
     </>

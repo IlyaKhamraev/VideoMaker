@@ -5,6 +5,9 @@
   --dark-primary-color: #422b00;
   --g100-color: #a5a5a5;
 
+  --DST_CORNER_RADIUS_10: 10px;
+
   --INDENT_8: 8px;
   --INDENT_12: 12px;
+  --INDENT_20: 20px;
 }

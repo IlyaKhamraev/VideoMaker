@@ -1,6 +1,6 @@
 .title {
   margin-top: var(--INDENT_8);
-  margin-bottom: 20px;
+  margin-bottom: var(--INDENT_20);
   opacity: 1;
   font-size: 28px;
   letter-spacing: 1px;
@@ -30,7 +30,7 @@
 }
 
 .link {
-  margin-bottom: 20px;
+  margin-bottom: var(--INDENT_20);
   font-size: 14px;
   font-family: "opensans_semibold", sans-serif;
   color: var(--white-color);

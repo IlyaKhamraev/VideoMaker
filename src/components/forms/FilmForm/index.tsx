@@ -1,5 +1,6 @@
-import { FC, useState, ChangeEvent, FormEvent } from "react";
+import { FC, useState, ChangeEvent, useRef } from "react";
 
+import { useOutsideClick } from "hooks/useOutsideClick";
 import styles from "components/forms/FilmForm/styles.module.css";
 
 interface FormValues {
@@ -8,6 +9,7 @@ interface FormValues {
   nameEvent: string;
   about: string;
   link: string;
+  previewImg: File | null;
 }
 
 const initialState: FormValues = {
@@ -16,6 +18,7 @@ const initialState: FormValues = {
   nameEvent: "",
   about: "",
   link: "",
+  previewImg: null,
 };
 
 const isCheckEmptyValues = (obj: FormValues) => {
@@ -24,9 +27,16 @@ const isCheckEmptyValues = (obj: FormValues) => {
   return values.some((value) => value !== "");
 };
 
-export const FilmForm: FC = () => {
+type Props = {
+  onClose: () => void;
+};
+
+export const FilmForm: FC<Props> = ({ onClose }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useOutsideClick(modalRef, onClose);
+
   const [form, setForm] = useState(initialState);
-  const [file, setFile] = useState<File>();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -34,26 +44,22 @@ export const FilmForm: FC = () => {
 
   const handleChangeFile = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      setFile(e.target.files[0]);
+      setForm({ ...form, previewImg: e.target.files[0] });
     }
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const handleSubmit = () => {
     if (!isCheckEmptyValues(form)) {
       return;
     }
-
-    if (!file) {
-      return;
-    }
   };
+
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <div ref={modalRef} className={styles.form}>
       <label>
         Название ролика
         <input
+          className={styles.input}
           value={form.name}
           name="name"
           type="text"
@@ -63,6 +69,7 @@ export const FilmForm: FC = () => {
       <label>
         Название компании
         <input
+          className={styles.input}
           value={form.nameCompany}
           name="nameCompany"
           type="text"
@@ -72,6 +79,7 @@ export const FilmForm: FC = () => {
       <label>
         Название события
         <input
+          className={styles.input}
           value={form.nameEvent}
           name="nameEvent"
           type="text"
@@ -81,6 +89,7 @@ export const FilmForm: FC = () => {
       <label>
         О ролике
         <input
+          className={styles.input}
           value={form.about}
           name="about"
           type="text"
@@ -88,8 +97,10 @@ export const FilmForm: FC = () => {
         />
       </label>
       <label>
-        Ссылка на ролик
+        Ссылка на ролик vimeo
         <input
+          className={styles.input}
+          placeholder="https://player.vimeo.com/video/732441603?h=c390550b24"
           value={form.link}
           name="link"
           type="text"
@@ -97,10 +108,15 @@ export const FilmForm: FC = () => {
         />
       </label>
       <label>
-        Загрузить превью
-        <input name="preview" type="file" onChange={handleChangeFile} />
+        Загрузить превью фото
+        <input
+          className={styles.input}
+          name="previewImg"
+          type="file"
+          onChange={handleChangeFile}
+        />
       </label>
-      <button>Отправить</button>
-    </form>
+      <button onClick={handleSubmit}>Отправить</button>
+    </div>
   );
 };

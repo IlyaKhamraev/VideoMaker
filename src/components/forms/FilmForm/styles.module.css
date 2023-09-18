@@ -1,14 +1,22 @@
 .form {
   color: var(--black-color);
+  background: var(--white-color);
   display: flex;
   flex-direction: column;
   max-width: 500px;
+  width: 100%;
   border: 1px solid var(--black-color);
-  padding: 20px;
+  padding: var(--INDENT_20);
+  border-radius: var(--DST_CORNER_RADIUS_10);
 }
 
 .form label {
-  margin-bottom: 20px;
+  margin-bottom: var(--INDENT_20);
   display: flex;
   flex-direction: column;
+}
+
+.input {
+  padding: 6px 10px;
+  margin-top: 6px;
 }

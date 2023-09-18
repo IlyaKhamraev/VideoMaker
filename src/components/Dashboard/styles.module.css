@@ -9,8 +9,8 @@
 }
 
 .tabs {
-  padding-top: 20px;
-  margin-bottom: 20px;
+  padding-top: var(--INDENT_20);
+  margin-bottom: var(--INDENT_20);
 }
 
 .tab {
@@ -25,7 +25,7 @@
 }
 
 .nav {
-  padding: 20px;
+  padding: var(--INDENT_20);
   background: var(--black-color);
   display: flex;
   justify-content: space-between;
