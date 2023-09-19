@@ -21,6 +21,15 @@ export type Film = {
   client: string;
   event: string;
   description: string;
-  previewImg: File | null;
+  previewImg: string;
   vimeo: string;
+};
+
+export type FilmFormType = {
+  name: string;
+  client: string;
+  event: string;
+  description: string;
+  vimeo: string;
+  previewImg: File | null;
 };

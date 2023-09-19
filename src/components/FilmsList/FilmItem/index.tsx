@@ -2,29 +2,23 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { GiPlayButton } from "react-icons/gi";
 
+import { Film } from "types";
 import styles from "components/FilmsList/FilmItem/styles.module.css";
+import plugImg from "assets/images/plug_img.png";
 
-interface Props {
-  id: number;
-  promoImg: string;
-  client: string;
-  name: string;
-  category: string;
-}
-
-export const FilmItem: FC<Props> = ({
-  id,
-  promoImg,
+export const FilmItem: FC<Film> = ({
+  _id,
+  previewImg,
   client,
   name,
-  category,
+  event,
 }) => (
   <li className={styles.wrapper}>
-    <Link className={styles.linkWrapper} to={`film/${id}`}>
+    <Link className={styles.linkWrapper} to={`film/${_id}`}>
       <div className={styles.filmImg}>
-        <img className={styles.img} src={promoImg} alt="promo" />
+        <img className={styles.img} src={previewImg ?? plugImg} alt="promo" />
 
-        <Link className={styles.playLink} to={`film/${id}`}>
+        <Link className={styles.playLink} to={`film/${_id}`}>
           <span className={styles.play}>
             <GiPlayButton />
           </span>
@@ -33,7 +27,7 @@ export const FilmItem: FC<Props> = ({
       <div className={styles.content}>
         <p className={styles.client}>{client}</p>
         <p className={styles.name}>{name}</p>
-        <p className={styles.category}>{category}</p>
+        <p className={styles.category}>{event}</p>
       </div>
     </Link>
   </li>

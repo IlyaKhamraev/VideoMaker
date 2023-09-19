@@ -20,11 +20,11 @@ function App() {
   const { profile, isAuthenticated } = useStore($access);
   const { films } = useStore($films);
 
-  // useEffect(() => {
-  //   if (!films?.length) {
-  //     getFilms();
-  //   }
-  // }, [films]);
+  useEffect(() => {
+    if (!films?.length) {
+      getFilms();
+    }
+  }, [films]);
 
   useEffect(() => {
     if (!profile) {

@@ -1,16 +1,14 @@
 import { createEffect, createStore } from "effector";
 import axios from "axios";
 
-import { Film } from "types";
+import { Film, FilmFormType } from "types";
 
 type State = {
   films: Film[];
-  loading: boolean;
 };
 
 const initialState: State = {
   films: [],
-  loading: false,
 };
 
 const baseURL = `http://localhost:8000`;
@@ -26,7 +24,7 @@ export const getFilms = createEffect(async () => {
   return response;
 });
 
-export const createFilm = createEffect(async (film: Film) => {
+export const createFilm = createEffect(async (film: FilmFormType) => {
   const response = await axios.post("/film", film, options);
 
   return response;
@@ -38,7 +36,7 @@ export const deleteFilm = createEffect(async () => {
   return response;
 });
 
-export const updateFilm = createEffect(async (film: Film) => {
+export const updateFilm = createEffect(async (film: FilmFormType) => {
   const response = await axios.patch("/film", film, options);
 
   return response;
@@ -50,7 +48,6 @@ export const $films = createStore<State>(initialState)
     (state, payload): State => ({
       ...state,
       films: payload.data,
-      loading: false,
     })
   )
   .on(
@@ -58,7 +55,6 @@ export const $films = createStore<State>(initialState)
     (state, paylaod): State => ({
       ...state,
       films: [...state.films, paylaod.data],
-      loading: false,
     })
   )
   .on(
@@ -66,7 +62,6 @@ export const $films = createStore<State>(initialState)
     (state, paylaod): State => ({
       ...state,
       films: state.films?.filter((film) => film._id !== paylaod.data.id),
-      loading: false,
     })
   )
   .on(
@@ -76,6 +71,5 @@ export const $films = createStore<State>(initialState)
       films: state.films?.map((film) =>
         film._id === paylaod.data.id ? paylaod.data : film
       ),
-      loading: false,
     })
   );

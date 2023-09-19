@@ -1,14 +1,20 @@
 import { useParams } from "react-router-dom";
 import classNames from "classnames";
+import { useStore } from "effector-react";
 
 import { Wrapper } from "components/Wrapper";
 import styles from "components/FilmsList/Film/styles.module.css";
-import { films } from "components/FilmsList/constants";
+import { $films } from "store/films";
 
 export const Film = () => {
   const { id } = useParams();
+  const { films } = useStore($films);
 
-  const film = films.find((film) => film.id === Number(id));
+  const film = films.find((el) => el._id === id);
+
+  // if (loadingGetFilm) {
+  //   return <div>loading</div>;
+  // }
 
   return (
     <Wrapper>
@@ -34,8 +40,8 @@ export const Film = () => {
             <p className={styles.client}>{film.client}</p>
           )}
           {film && film.name && <p className={styles.name}>{film.name}</p>}
-          {film && film.category && (
-            <p className={styles.category}>{film.category}</p>
+          {film && film.event && (
+            <p className={styles.category}>{film.event}</p>
           )}
         </div>
         {film && film.description && (

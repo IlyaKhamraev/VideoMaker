@@ -1,19 +1,11 @@
 import { FC, useState, ChangeEvent, useRef } from "react";
 import { createFilm } from "store/films";
 
+import { FilmFormType } from "types";
 import { useOutsideClick } from "hooks/useOutsideClick";
 import styles from "components/forms/FilmForm/styles.module.css";
 
-interface FormValues {
-  name: string;
-  client: string;
-  event: string;
-  description: string;
-  vimeo: string;
-  previewImg: File | null;
-}
-
-const initialState: FormValues = {
+const initialState: FilmFormType = {
   name: "",
   client: "",
   event: "",
@@ -22,7 +14,7 @@ const initialState: FormValues = {
   previewImg: null,
 };
 
-const isCheckEmptyValues = (obj: FormValues) => {
+const isCheckEmptyValues = (obj: FilmFormType) => {
   const values = Object.values(obj);
 
   return values.some((value) => value !== "");
