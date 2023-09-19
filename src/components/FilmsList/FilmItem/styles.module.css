@@ -57,7 +57,6 @@
   line-height: 1;
   letter-spacing: 0.38px;
   text-transform: uppercase;
-  font-family: "opensans_regular", sans-serif;
 }
 
 .name {
@@ -67,7 +66,7 @@
   line-height: 1;
   letter-spacing: 0.38px;
   text-transform: uppercase;
-  font-family: "opensans_semibold", sans-serif;
+  font-family: "thunder_extraboldlc", sans-serif;
 }
 
 .category {
@@ -77,7 +76,7 @@
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: "thunder-extraboldlc", sans-serif;
+  font-family: "thunder_extraboldlc", sans-serif;
   color: var(--white-color);
 }
 

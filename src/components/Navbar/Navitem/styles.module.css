@@ -1,5 +1,5 @@
 .navItem {
-  margin-bottom: 8px;
+  margin-bottom: var(--INDENT_8);
 }
 
 .navItem.active {
@@ -9,7 +9,6 @@
 .navItemLink {
   transition: 0.4s;
   color: var(--white-color);
-  font-family: "rg-standardbold", sans-serif;
   font-size: 18px;
 }
 

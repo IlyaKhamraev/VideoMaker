@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "thunder_extraboldlc";
+  src:
+    url("./assets/fonts/thunder-extraboldlc.woff2") format("woff2"),
+    url("./assets/fonts/thunder-extraboldlc.woff") format("woff"),
+    url("./assets/fonts/thunder-extraboldlc.svg#thunder-extraboldlc")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

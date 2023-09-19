@@ -11,6 +11,6 @@
 .alignBlock {
   position: relative;
   overflow: visible;
-  padding-top: 16px;
+  padding-top: var(--INDENT_16);
   flex: 1;
 }

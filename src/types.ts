@@ -24,9 +24,3 @@ export type Film = {
   previewImg: File | null;
   vimeo: string;
 };
-// name: string;
-// client: string;
-// event: string;
-// description: string;
-// vimeo: string;
-// previewImg: File | null;

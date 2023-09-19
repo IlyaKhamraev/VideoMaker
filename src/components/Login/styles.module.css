@@ -30,7 +30,7 @@
 .input {
   display: flex;
   flex-direction: column;
-  margin-top: 5px;
+  margin-top: var(--INDENT_4);
   padding: var(--INDENT_8) var(--INDENT_12);
   font-size: 16px;
   border: 1px solid var(--black-color);
@@ -45,7 +45,7 @@
 .submit {
   background: var(--black-color);
   color: var(--white-color);
-  padding: 10px var(--INDENT_20);
+  padding: var(--INDENT_10) var(--INDENT_20);
   border: none;
   cursor: pointer;
   font-size: 16px;

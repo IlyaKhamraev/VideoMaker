@@ -5,7 +5,7 @@
   font-size: 28px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: "thunder-extraboldlc", sans-serif;
+  font-family: "thunder_extraboldlc", sans-serif;
   color: var(--white-color);
   cursor: default;
 }
@@ -13,7 +13,7 @@
 .subtitle {
   margin-bottom: 40px;
   font-size: 24px;
-  font-family: "thunder-extraboldlc", sans-serif;
+  font-family: "thunder_extraboldlc", sans-serif;
   color: var(--white-color);
   cursor: default;
 }
@@ -24,7 +24,7 @@
 
 .titleLink {
   font-size: 24px;
-  font-family: "thunder-extraboldlc", sans-serif;
+  font-family: "thunder_extraboldlc", sans-serif;
   color: var(--white-color);
   cursor: default;
 }
@@ -32,7 +32,6 @@
 .link {
   margin-bottom: var(--INDENT_20);
   font-size: 14px;
-  font-family: "opensans_semibold", sans-serif;
   color: var(--white-color);
   transition: color 0.4s;
 }

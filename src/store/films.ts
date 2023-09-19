@@ -4,12 +4,12 @@ import axios from "axios";
 import { Film } from "types";
 
 type State = {
-  films: Film[] | null;
+  films: Film[];
   loading: boolean;
 };
 
 const initialState: State = {
-  films: null,
+  films: [],
   loading: false,
 };
 
@@ -26,17 +26,56 @@ export const getFilms = createEffect(async () => {
   return response;
 });
 
-export const createFilm = createEffect(async (data: Film) => {
-  const response = await axios.post("/film", data, options);
+export const createFilm = createEffect(async (film: Film) => {
+  const response = await axios.post("/film", film, options);
 
   return response;
 });
 
-export const $films = createStore<State>(initialState).on(
-  getFilms.doneData,
-  (state, payload): State => ({
-    ...state,
-    films: payload.data,
-    loading: false,
-  })
-);
+export const deleteFilm = createEffect(async () => {
+  const response = await axios.delete("/film", options);
+
+  return response;
+});
+
+export const updateFilm = createEffect(async (film: Film) => {
+  const response = await axios.patch("/film", film, options);
+
+  return response;
+});
+
+export const $films = createStore<State>(initialState)
+  .on(
+    getFilms.doneData,
+    (state, payload): State => ({
+      ...state,
+      films: payload.data,
+      loading: false,
+    })
+  )
+  .on(
+    createFilm.doneData,
+    (state, paylaod): State => ({
+      ...state,
+      films: [...state.films, paylaod.data],
+      loading: false,
+    })
+  )
+  .on(
+    deleteFilm.doneData,
+    (state, paylaod): State => ({
+      ...state,
+      films: state.films?.filter((film) => film._id !== paylaod.data.id),
+      loading: false,
+    })
+  )
+  .on(
+    updateFilm.doneData,
+    (state, paylaod): State => ({
+      ...state,
+      films: state.films?.map((film) =>
+        film._id === paylaod.data.id ? paylaod.data : film
+      ),
+      loading: false,
+    })
+  );
