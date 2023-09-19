@@ -9,7 +9,9 @@
 .navItemLink {
   transition: 0.4s;
   color: var(--white-color);
-  font-size: 18px;
+  font-family: "dinpro_condensedmedium", sans-serif;
+  font-weight: 900;
+  font-size: var(--FONT_SIZE_18);
 }
 
 .navItemLink:hover {

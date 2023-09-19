@@ -8,7 +8,7 @@
 
 .link {
   transition: 0.4s;
-  font-size: var(--INDENT_20);
+  font-size: var(--FONT_SIZE_20);
   color: var(--white-color);
   cursor: pointer;
 }

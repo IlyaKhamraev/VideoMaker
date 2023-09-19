@@ -10,7 +10,7 @@
 }
 
 .title {
-  font-size: 24px;
+  font-size: var(--FONT_SIZE_24);
   color: var(--black-color);
   margin-bottom: var(--INDENT_20);
   font-weight: 500;
@@ -32,7 +32,7 @@
   flex-direction: column;
   margin-top: var(--INDENT_4);
   padding: var(--INDENT_8) var(--INDENT_12);
-  font-size: 16px;
+  font-size: var(--FONT_SIZE_16);
   border: 1px solid var(--black-color);
   border-radius: 2px;
 }
@@ -48,7 +48,7 @@
   padding: var(--INDENT_10) var(--INDENT_20);
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: var(--FONT_SIZE_16);
   font-weight: 500;
   border-radius: 2px;
   transition: 0.4s;

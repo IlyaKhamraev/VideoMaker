@@ -24,7 +24,7 @@
   transition: 0.4s;
   color: var(--white-color);
   font-family: "thunder_extraboldlc", sans-serif;
-  font-size: 24px;
+  font-size: var(--FONT_SIZE_24);
 }
 
 .logo:hover {

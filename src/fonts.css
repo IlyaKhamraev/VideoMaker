@@ -8,3 +8,33 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "dinpro_condensedlight";
+  src:
+    url("./assets/fonts/dinpro_condensedlight.woff2") format("woff2"),
+    url("./assets/fonts/dinpro_condensedlight.woff") format("woff"),
+    url("./assets/fonts/dinpro_condensedlight.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "dinpro_condensedmedium";
+  src:
+    url("./assets/fonts/dinpro_condensedmedium.woff2") format("woff2"),
+    url("./assets/fonts/dinpro_condensedmedium.woff") format("woff"),
+    url("./assets/fonts/dinpro_condensedmedium.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "dinpro_condensedregular";
+  src:
+    url("./assets/fonts/dinpro_condensedregular.woff2") format("woff2"),
+    url("./assets/fonts/dinpro_condensedregular.woff") format("woff"),
+    url("./assets/fonts/dinpro_condensedregular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
