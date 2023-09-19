@@ -1,3 +1,28 @@
+.film {
+  position: relative;
+}
+
+.loding::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--loader-background-color) 25%,
+    var(--loader-highlight-color) 50%,
+    var(--loader-background-color) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 2s infinite ease-in-out;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
 .video {
   padding: 56.25% 0 0 0;
   position: relative;
@@ -55,4 +80,13 @@
   color: var(--white-color);
   font-family: "dinpro_condensedmedium", sans-serif;
   font-weight: 900;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }

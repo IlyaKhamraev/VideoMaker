@@ -5,10 +5,12 @@ import { Film, FilmFormType } from "types";
 
 type State = {
   films: Film[];
+  isLoading: boolean;
 };
 
 const initialState: State = {
   films: [],
+  isLoading: false,
 };
 
 const baseURL = `http://localhost:8000`;
@@ -48,14 +50,20 @@ export const $films = createStore<State>(initialState)
     (state, payload): State => ({
       ...state,
       films: payload.data,
+      isLoading: false,
     })
   )
+  .on(getFilms.pending, (state, isLoading): State => ({ ...state, isLoading }))
   .on(
     createFilm.doneData,
     (state, paylaod): State => ({
       ...state,
       films: [...state.films, paylaod.data],
     })
+  )
+  .on(
+    createFilm.pending,
+    (state, isLoading): State => ({ ...state, isLoading })
   )
   .on(
     deleteFilm.doneData,
@@ -65,6 +73,10 @@ export const $films = createStore<State>(initialState)
     })
   )
   .on(
+    deleteFilm.pending,
+    (state, isLoading): State => ({ ...state, isLoading })
+  )
+  .on(
     updateFilm.doneData,
     (state, paylaod): State => ({
       ...state,
@@ -72,4 +84,8 @@ export const $films = createStore<State>(initialState)
         film._id === paylaod.data.id ? paylaod.data : film
       ),
     })
+  )
+  .on(
+    updateFilm.pending,
+    (state, isLoading): State => ({ ...state, isLoading })
   );

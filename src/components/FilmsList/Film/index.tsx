@@ -1,33 +1,38 @@
 import { useParams } from "react-router-dom";
 import classNames from "classnames";
 import { useStore } from "effector-react";
+import { useState } from "react";
 
 import { Wrapper } from "components/Wrapper";
-import styles from "components/FilmsList/Film/styles.module.css";
 import { $films } from "store/films";
 
+import styles from "components/FilmsList/Film/styles.module.css";
+
 export const Film = () => {
+  const [isLoadFrame, setIsLoadFrame] = useState(true);
+
   const { id } = useParams();
   const { films } = useStore($films);
 
   const film = films.find((el) => el._id === id);
 
-  // if (loadingGetFilm) {
-  //   return <div>loading</div>;
-  // }
-
   return (
     <Wrapper>
-      <div className={styles.film}>
+      <div
+        className={classNames(styles.film, {
+          [styles.loding]: film?.vimeo && isLoadFrame,
+        })}
+      >
         <div className={styles.video}>
           <iframe
+            onLoad={() => setIsLoadFrame(false)}
             title="video"
             className={styles.frame}
             src={film && film.vimeo}
             allow="autoplay; fullscreen; picture-in-picture"
             frameBorder="none"
             allowFullScreen
-          ></iframe>
+          />
         </div>
         <div
           className={classNames(

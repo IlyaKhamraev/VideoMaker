@@ -1,3 +1,9 @@
+.lodingBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .list {
   display: grid;
   justify-items: stretch;

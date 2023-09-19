@@ -4,6 +4,8 @@
   --primary-color: #ffc93a;
   --dark-primary-color: #422b00;
   --g100-color: #a5a5a5;
+  --loader-background-color: #000000;
+  --loader-highlight-color: #dedede;
 
   --FONT_SIZE_16: 16px;
   --FONT_SIZE_18: 18px;
