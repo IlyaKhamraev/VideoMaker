@@ -26,8 +26,13 @@ export const getFilms = createEffect(async () => {
   return response;
 });
 
-export const createFilm = createEffect(async (film: FilmFormType) => {
-  const response = await axios.post("/film", film, options);
+export const createFilm = createEffect(async (film: any) => {
+  const response = await axios.post("/film", film, {
+    ...options,
+    headers: {
+      "content-type": "multipart/form-data",
+    },
+  });
 
   return response;
 });

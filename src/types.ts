@@ -31,5 +31,4 @@ export type FilmFormType = {
   event: string;
   description: string;
   vimeo: string;
-  previewImg: File | null;
 };
