@@ -6,6 +6,7 @@ import { $access } from "store/access";
 import { NavItem } from "components/Navbar/NavItem";
 import { paths } from "components/Navbar/constants";
 import { Social } from "components/Social";
+import { Routes } from "helpers/routes";
 
 import styles from "components/Navbar/styles.module.css";
 
@@ -18,8 +19,8 @@ export const Navbar = () => {
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <div className={styles.header}>
-          <Link className={styles.logo} to="/">
-            R. Raudsepp
+          <Link className={styles.logo} to={Routes.Main}>
+            r.raudsepp
           </Link>
         </div>
         <nav>

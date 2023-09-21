@@ -50,13 +50,7 @@ export const Film = () => {
           )}
         </div>
         {film && film.description && (
-          <div
-            className={classNames(
-              styles.borderBottom,
-              styles.padding,
-              styles.mb12
-            )}
-          >
+          <div className={classNames(styles.padding, styles.mb12)}>
             <p className={styles.description}>{film.description}</p>
           </div>
         )}

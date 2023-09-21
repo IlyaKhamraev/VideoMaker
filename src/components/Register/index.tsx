@@ -1,6 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Link } from "react-router-dom";
 
+import { Routes } from "helpers/routes";
+
 import styles from "components/Register/styles.module.css";
 
 export const Register = () => {
@@ -73,7 +75,7 @@ export const Register = () => {
           <button>Sign up</button>
         </form>
         <div className={styles.note}>
-          Already a memeber? <Link to="/login">Login in here</Link>
+          Already a memeber? <Link to={Routes.Login}>Login in here</Link>
         </div>
       </div>
     </div>

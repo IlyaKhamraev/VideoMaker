@@ -9,7 +9,7 @@
   color: var(--white-color);
   text-align: center;
   text-decoration: none;
-  transition: color 1s;
+  transition: 1s;
 }
 
 .linkWrapper:hover h2 {
@@ -24,15 +24,21 @@
   color: var(--primary-color);
 }
 
+.linkWrapper:hover .img {
+  filter: grayscale(0);
+}
+
 .filmImg {
   position: relative;
   overflow: hidden;
   padding-top: 56.25%;
-  border-radius: 2px;
+  border-radius: var(--DST_CORNER_RADIUS_2);
   background-color: var(--black-color);
 }
 
 .img {
+  filter: grayscale(0.7);
+  transition: 0.5s;
   position: absolute;
   left: 0;
   top: 0;
@@ -62,8 +68,8 @@
 }
 
 .name {
-  transition: color 0.4s;
-  color: var(--g100-color);
+  transition: 0.4s;
+  color: var(--white-color);
   font-size: var(--FONT_SIZE_24);
   line-height: 1;
   letter-spacing: 0.38px;
@@ -79,13 +85,13 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: "thunder_extraboldlc", sans-serif;
-  color: var(--white-color);
+  color: var(--g100-color);
 }
 
 .playLink {
   position: absolute;
   transition: 0.5s;
-  bottom: -500px;
+  bottom: -100px;
   left: 10px;
 }
 
@@ -94,14 +100,14 @@
 }
 
 .play {
-  transition: background 0.3s;
+  transition: 0.3s;
   background: rgb(255, 255, 255, 0.8);
   width: 70px;
   display: flex;
   align-items: center;
   height: 40px;
   justify-content: center;
-  border-radius: 0 10px 0 10px;
+  border-radius: var(--DST_CORNER_RADIUS_2);
   color: var(--black-color);
   font-size: var(--FONT_SIZE_24);
 }

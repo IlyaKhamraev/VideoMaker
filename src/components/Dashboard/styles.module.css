@@ -17,6 +17,8 @@
   padding: var(--INDENT_8) var(--INDENT_12);
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .content {
@@ -48,8 +50,14 @@
   border: none;
   border-radius: 2px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .logout:hover {
   background: var(--primary-color);
+}
+
+.icon {
+  margin: 0 var(--INDENT_4);
 }

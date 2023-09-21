@@ -10,12 +10,13 @@ interface Props {
   active: boolean;
 }
 
-export const NavItem: FC<Props> = ({ path, name, active }) => {
-  return (
-    <div className={classNames(styles.navItem, { active: active })}>
-      <Link className={styles.navItemLink} to={path}>
-        {name}
-      </Link>
-    </div>
-  );
-};
+export const NavItem: FC<Props> = ({ path, name, active }) => (
+  <div className={styles.navItem}>
+    <Link
+      className={classNames(styles.navItemLink, { [styles.active]: active })}
+      to={path}
+    >
+      {name}
+    </Link>
+  </div>
+);

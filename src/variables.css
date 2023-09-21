@@ -5,7 +5,7 @@
   --dark-primary-color: #422b00;
   --g100-color: #a5a5a5;
   --loader-background-color: #000000;
-  --loader-highlight-color: #dedede;
+  --loader-highlight-color: #2d2b2b;
 
   --FONT_SIZE_16: 16px;
   --FONT_SIZE_18: 18px;
@@ -15,8 +15,12 @@
   --FONT_SIZE_26: 26px;
   --FONT_SIZE_28: 28px;
 
+  --DST_CORNER_RADIUS_2: 2px;
+  --DST_CORNER_RADIUS_6: 6px;
   --DST_CORNER_RADIUS_10: 10px;
 
+  --INDENT_2: 2px;
+  --INDENT_4: 4px;
   --INDENT_6: 6px;
   --INDENT_8: 8px;
   --INDENT_10: 10px;

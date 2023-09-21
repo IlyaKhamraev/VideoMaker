@@ -1,15 +1,22 @@
 import { FC, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
+import { useStore } from "effector-react";
 
 import { FilmForm } from "components/forms/FilmForm";
 import { Modal } from "components/Modal";
+import { Table } from "components/Table";
 import { logout } from "store/access";
+import { $films } from "store/films";
+import { FaPlus } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
+import { Routes } from "helpers/routes";
 
 import styles from "components/Dashboard/styles.module.css";
 
 export const Dashboard: FC = () => {
   const [showModal, setShowModal] = useState(false);
+  const { films } = useStore($films);
 
   const toggleModal = () => setShowModal(!showModal);
 
@@ -22,13 +29,13 @@ export const Dashboard: FC = () => {
           <div className={styles.content}>
             <div className={styles.nav}>
               <div>
-                <Link className={styles.navLink} to="/">
+                <Link className={styles.navLink} to={Routes.Main}>
                   На главную
                 </Link>
               </div>
               <div>
                 <button className={styles.logout} onClick={getLogout}>
-                  Выйти
+                  Выйти <FiLogOut className={styles.icon} />
                 </button>
               </div>
             </div>
@@ -38,8 +45,11 @@ export const Dashboard: FC = () => {
           <div className={styles.content}>
             <div className={styles.tabs}>
               <button onClick={toggleModal} className={styles.tab}>
-                Добавить ролик
+                <FaPlus className={styles.icon} /> Добавить ролик
               </button>
+            </div>
+            <div>
+              <Table items={films} />
             </div>
           </div>
         </div>

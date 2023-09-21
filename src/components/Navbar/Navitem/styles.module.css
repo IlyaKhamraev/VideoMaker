@@ -2,18 +2,18 @@
   margin-bottom: var(--INDENT_8);
 }
 
-.navItem.active {
-  color: var(--primary-color);
-}
-
 .navItemLink {
   transition: 0.4s;
   color: var(--white-color);
   font-family: "dinpro_condensedmedium", sans-serif;
   font-weight: 900;
-  font-size: var(--FONT_SIZE_18);
+  font-size: var(--FONT_SIZE_20);
 }
 
 .navItemLink:hover {
+  color: var(--primary-color);
+}
+
+.active {
   color: var(--primary-color);
 }

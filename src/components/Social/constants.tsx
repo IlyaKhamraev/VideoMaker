@@ -1,6 +1,4 @@
-import { FaInstagram } from "react-icons/fa";
-import { FaTelegram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaTelegram, FaYoutube, FaVimeo } from "react-icons/fa";
 
 export const social = [
   {
@@ -17,6 +15,12 @@ export const social = [
   },
   {
     id: 3,
+    name: "Vimeo",
+    icon: <FaVimeo />,
+    path: "https://www.youtube.com/robertraudsepp",
+  },
+  {
+    id: 4,
     name: "Youtube",
     icon: <FaYoutube />,
     path: "https://www.youtube.com/robertraudsepp",

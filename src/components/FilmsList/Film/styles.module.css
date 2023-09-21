@@ -18,8 +18,7 @@
   );
   background-size: 200% 100%;
   animation: loading 2s infinite ease-in-out;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border-radius: var(--DST_CORNER_RADIUS_10);
   z-index: 1;
 }
 

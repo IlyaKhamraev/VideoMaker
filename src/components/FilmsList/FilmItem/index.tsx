@@ -16,13 +16,18 @@ export const FilmItem: FC<Film> = ({
   <li className={styles.wrapper}>
     <Link className={styles.linkWrapper} to={`film/${_id}`}>
       <div className={styles.filmImg}>
-        <img className={styles.img} src={previewImg ?? plugImg} alt="promo" />
+        <img
+          className={styles.img}
+          src={previewImg ?? plugImg}
+          alt="promo"
+          loading="lazy"
+        />
 
-        <Link className={styles.playLink} to={`film/${_id}`}>
+        <span className={styles.playLink}>
           <span className={styles.play}>
             <GiPlayButton />
           </span>
-        </Link>
+        </span>
       </div>
       <div className={styles.content}>
         <p className={styles.client}>{client}</p>
