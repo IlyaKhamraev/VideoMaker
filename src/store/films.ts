@@ -1,7 +1,7 @@
 import { createEffect, createStore } from "effector";
 import axios from "axios";
 
-import { Film, FilmFormType } from "types";
+import { Film, FilmFormType, Id } from "types";
 
 type State = {
   films: Film[];
@@ -37,8 +37,8 @@ export const createFilm = createEffect(async (film: any) => {
   return response;
 });
 
-export const deleteFilm = createEffect(async () => {
-  const response = await axios.delete("/film", options);
+export const deleteFilm = createEffect(async (id: Id) => {
+  const response = await axios.delete("/film", { data: { id }, ...options });
 
   return response;
 });

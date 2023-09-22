@@ -4,11 +4,11 @@ import classNames from "classnames";
 
 import styles from "components/Navbar/NavItem/styles.module.css";
 
-interface Props {
+type Props = {
   path: string;
   name: string;
   active: boolean;
-}
+};
 
 export const NavItem: FC<Props> = ({ path, name, active }) => (
   <div className={styles.navItem}>

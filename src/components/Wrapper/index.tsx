@@ -4,9 +4,9 @@ import { Navbar } from "components/Navbar";
 
 import styles from "components/Wrapper/styles.module.css";
 
-interface Props {
+type Props = {
   children: JSX.Element;
-}
+};
 
 export const Wrapper: FC<Props> = ({ children }) => {
   return (

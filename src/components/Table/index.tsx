@@ -1,7 +1,8 @@
 import { FC, MouseEvent } from "react";
 
-import { Film } from "types";
+import { Film, Id } from "types";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { deleteFilm } from "store/films";
 
 import styles from "components/Table/styles.module.css";
 
@@ -11,7 +12,10 @@ type Props = {
 
 export const Table: FC<Props> = ({ items }) => {
   const handleClickEdit = (e: MouseEvent<HTMLElement>) => {};
-  const handleClickRemove = (e: MouseEvent<HTMLElement>) => {};
+
+  const handleClickRemove = (id: Id) => {
+    deleteFilm(id);
+  };
 
   return (
     <div>
@@ -55,7 +59,7 @@ export const Table: FC<Props> = ({ items }) => {
                   <button
                     className={styles.actionBtn}
                     title="edit"
-                    onClick={handleClickRemove}
+                    onClick={() => handleClickRemove(row._id)}
                   >
                     Remove <FaTrash className={styles.icon} />
                   </button>

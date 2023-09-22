@@ -16,7 +16,7 @@ export type ModelsProfile = {
 };
 
 export type Film = {
-  _id?: Id;
+  _id: Id;
   name: string;
   client: string;
   event: string;
