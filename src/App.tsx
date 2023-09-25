@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useStore } from "effector-react";
 
@@ -14,23 +14,19 @@ import { Register } from "components/Register";
 import { Info } from "components/Info";
 import { history } from "helpers/history";
 import { $access, getProfile } from "store/access";
-import { $films, getFilms } from "store/films";
+import { getFilms } from "store/films";
 
 function App() {
-  const { profile, isAuthenticated } = useStore($access);
-  const { films } = useStore($films);
+  const [isInit, setIsInit] = useState(true);
+  const { isAuthenticated } = useStore($access);
 
   useEffect(() => {
-    if (!films?.length) {
+    if (isInit) {
       getFilms();
-    }
-  }, [films]);
-
-  useEffect(() => {
-    if (!profile) {
       getProfile();
+      setIsInit((state) => !state);
     }
-  }, [profile]);
+  }, [isInit]);
 
   history.navigate = useNavigate();
   history.location = useLocation();
