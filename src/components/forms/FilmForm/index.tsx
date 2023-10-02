@@ -21,7 +21,7 @@ export const FilmForm: FC<Props> = ({ onClose }) => {
       event: "",
       description: "",
       vimeo: "https://player.vimeo.com/video/732441603?h=c390550b24",
-      previewImg: null,
+      file: null,
     },
     onSubmit: (values) => {
       createFilm(values);
@@ -88,11 +88,11 @@ export const FilmForm: FC<Props> = ({ onClose }) => {
           <input
             accept="image/*"
             className={styles.input}
-            name="previewImg"
+            name="file"
             type="file"
             onChange={(e) => {
               if (e.currentTarget.files) {
-                setFieldValue("previewImg", e.currentTarget.files[0]);
+                setFieldValue("file", e.currentTarget.files[0]);
               }
             }}
           />
