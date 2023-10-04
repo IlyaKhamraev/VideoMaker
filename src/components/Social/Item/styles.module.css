@@ -11,6 +11,7 @@
   font-size: var(--FONT_SIZE_20);
   color: var(--white-color);
   cursor: pointer;
+  display: flex;
 }
 
 .link:hover {

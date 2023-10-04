@@ -24,7 +24,7 @@ function App() {
     if (isInit) {
       getFilms();
       getProfile();
-      setIsInit((state) => !state);
+      setIsInit(false);
     }
   }, [isInit]);
 
