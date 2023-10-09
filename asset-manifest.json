@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/VideoMaker/static/css/main.8c5e5be2.css",
+    "main.js": "/VideoMaker/static/js/main.f60ee648.js",
+    "static/js/787.1ed0c42c.chunk.js": "/VideoMaker/static/js/787.1ed0c42c.chunk.js",
+    "static/media/plug_img.png": "/VideoMaker/static/media/plug_img.389393af3bb695d4f0c0.png",
+    "static/media/dinpro_condensedmedium.svg": "/VideoMaker/static/media/dinpro_condensedmedium.db57e94954dc6dd19f72.svg",
+    "static/media/dinpro_condensedregular.svg": "/VideoMaker/static/media/dinpro_condensedregular.3b2bee1e3ec3a2214dc4.svg",
+    "static/media/dinpro_condensedlight.svg": "/VideoMaker/static/media/dinpro_condensedlight.e6855f7ce0a1830dbaaa.svg",
+    "static/media/thunder-extraboldlc.svg": "/VideoMaker/static/media/thunder-extraboldlc.47cdc272c85623bbe7e8.svg",
+    "static/media/lisubosa_semibold.svg": "/VideoMaker/static/media/lisubosa_semibold.6282d4b587ce024f29f2.svg",
+    "static/media/lisubosa_semibold.woff": "/VideoMaker/static/media/lisubosa_semibold.109f4764611165fb92a3.woff",
+    "static/media/dinpro_condensedregular.woff": "/VideoMaker/static/media/dinpro_condensedregular.57ec99cf956c6c4890cc.woff",
+    "static/media/lisubosa_semibold.woff2": "/VideoMaker/static/media/lisubosa_semibold.bae459aaa7cd595fc092.woff2",
+    "static/media/dinpro_condensedmedium.woff": "/VideoMaker/static/media/dinpro_condensedmedium.0c59bc6ffeca77611b48.woff",
+    "static/media/dinpro_condensedlight.woff": "/VideoMaker/static/media/dinpro_condensedlight.5220d4aa7be605499ed2.woff",
+    "static/media/thunder-extraboldlc.woff": "/VideoMaker/static/media/thunder-extraboldlc.54abebcdb7c8b3f3ed21.woff",
+    "static/media/dinpro_condensedregular.woff2": "/VideoMaker/static/media/dinpro_condensedregular.c17144d188a7001a0079.woff2",
+    "static/media/dinpro_condensedmedium.woff2": "/VideoMaker/static/media/dinpro_condensedmedium.5d4aa9032e6c31011bfa.woff2",
+    "static/media/dinpro_condensedlight.woff2": "/VideoMaker/static/media/dinpro_condensedlight.ec8c31cf8f1110f13fc3.woff2",
+    "static/media/thunder-extraboldlc.woff2": "/VideoMaker/static/media/thunder-extraboldlc.a8cc31179d04465ddee6.woff2",
+    "index.html": "/VideoMaker/index.html",
+    "main.8c5e5be2.css.map": "/VideoMaker/static/css/main.8c5e5be2.css.map",
+    "main.f60ee648.js.map": "/VideoMaker/static/js/main.f60ee648.js.map",
+    "787.1ed0c42c.chunk.js.map": "/VideoMaker/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c5e5be2.css",
+    "static/js/main.f60ee648.js"
+  ]
+}
