@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useStore } from "effector-react";
 
-import { ProtectedRoute } from "components/ProtectedRoute";
-import { PageNotFound } from "components/PageNotFound";
-import { Container } from "components/Container";
-import { FilmsList } from "components/FilmsList";
-import { Film } from "components/FilmsList/Film";
-import { Dashboard } from "components/Dashboard";
-import { Contact } from "components/Contanct";
-import { Login } from "components/Login";
-import { Register } from "components/Register";
-import { Info } from "components/Info";
-import { history } from "helpers/history";
-import { $access, getProfile } from "store/access";
-import { getFilms } from "store/films";
+import { ProtectedRoute } from "src/components/ProtectedRoute";
+import { PageNotFound } from "src/components/PageNotFound";
+import { Container } from "src/components/Container";
+import { FilmsList } from "src/components/FilmsList";
+import { Film } from "src/components/FilmsList/Film";
+import { Dashboard } from "src/components/Dashboard";
+import { Contact } from "src/components/Contanct";
+import { Login } from "src/components/Login";
+import { Register } from "src/components/Register";
+import { Info } from "src/components/Info";
+import { history } from "src/helpers/history";
+import { getFilms } from "src/store/films";
+import { $access, getProfile } from "src/store/access";
 
 function App() {
   const [isInit, setIsInit] = useState(true);

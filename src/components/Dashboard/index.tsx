@@ -5,14 +5,14 @@ import { useStore } from "effector-react";
 import { FaPlus } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 
-import { FilmForm } from "components/Forms/FilmForm";
-import { Modal } from "components/Modal";
-import { Table } from "components/Table";
-import { logout } from "store/access";
-import { $films } from "store/films";
-import { Routes } from "helpers/routes";
+import { FilmForm } from "src/components/Forms/FilmForm";
+import { Modal } from "src/components/Modal";
+import { Table } from "src/components/Table";
+import { logout } from "src/store/access";
+import { $films } from "src/store/films";
+import { Routes } from "src/helpers/routes";
 
-import styles from "components/Dashboard/styles.module.css";
+import styles from "src/components/Dashboard/styles.module.css";
 
 export const Dashboard: FC = () => {
   const [showModal, setShowModal] = useState(false);

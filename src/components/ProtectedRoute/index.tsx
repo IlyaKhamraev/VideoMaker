@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Navigate } from "react-router-dom";
 
-import { Routes } from "helpers/routes";
+import { Routes } from "src/helpers/routes";
 
 type Props = {
   element: React.FC;

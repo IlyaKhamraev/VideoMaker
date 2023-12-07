@@ -1,8 +1,8 @@
 import { createEffect, createStore } from "effector";
 import axios from "axios";
 
-import { ModelsProfile, Auth } from "types";
-import { history } from "helpers/history";
+import { ModelsProfile, Auth } from "src/types";
+import { history } from "src/helpers/history";
 
 type State = {
   isAuthenticated: boolean;

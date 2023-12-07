@@ -1,7 +1,7 @@
 import { createEffect, createStore } from "effector";
 import axios from "axios";
 
-import { Film, FilmFormType, Id } from "types";
+import { Film, FilmFormType, Id } from "src/types";
 
 type State = {
   films: Film[];

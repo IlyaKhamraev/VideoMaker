@@ -1,10 +1,10 @@
 import { FC, MouseEvent } from "react";
 
-import { Film, Id } from "types";
+import { Film, Id } from "src/types";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { deleteFilm } from "store/films";
+import { deleteFilm } from "src/store/films";
 
-import styles from "components/Table/styles.module.css";
+import styles from "src/components/Table/styles.module.css";
 
 type Props = {
   items: Film[];

@@ -3,10 +3,10 @@ import classNames from "classnames";
 import { useStore } from "effector-react";
 import { useState } from "react";
 
-import { Wrapper } from "components/Wrapper";
-import { $films } from "store/films";
+import { Wrapper } from "src/components/Wrapper";
+import { $films } from "src/store/films";
 
-import styles from "components/FilmsList/Film/styles.module.css";
+import styles from "src/components/FilmsList/Film/styles.module.css";
 
 export const Film = () => {
   const [isLoadFrame, setIsLoadFrame] = useState(true);

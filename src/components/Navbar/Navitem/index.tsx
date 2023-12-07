@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 
-import styles from "components/Navbar/NavItem/styles.module.css";
+import styles from "src/components/Navbar/NavItem/styles.module.css";
 
 type Props = {
   path: string;

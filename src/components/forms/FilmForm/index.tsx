@@ -1,9 +1,10 @@
 import { FC, useRef } from "react";
 import { useFormik } from "formik";
 
-import { createFilm } from "store/films";
-import { useOutsideClick } from "hooks/useOutsideClick";
-import styles from "components/Forms/FilmForm/styles.module.css";
+import { createFilm } from "src/store/films";
+import { useOutsideClick } from "src/hooks/useOutsideClick";
+
+import styles from "src/components/Forms/FilmForm/styles.module.css";
 
 type Props = {
   onClose: () => void;

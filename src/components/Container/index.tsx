@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import styles from "components/Container/styles.module.css";
+import styles from "src/components/Container/styles.module.css";
 
 type Props = {
   children: JSX.Element;

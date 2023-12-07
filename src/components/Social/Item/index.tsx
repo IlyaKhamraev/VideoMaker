@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import styles from "components/Social/Item/styles.module.css";
+import styles from "src/components/Social/Item/styles.module.css";
 type Props = {
   icon: JSX.Element;
   path: string;

@@ -1,8 +1,8 @@
 import { useFormik } from "formik";
 
-import { login } from "store/access";
+import { login } from "src/store/access";
 
-import styles from "components/Forms/LoginForm/styles.module.css";
+import styles from "src/components/Forms/LoginForm/styles.module.css";
 
 export const LoginForm = () => {
   const { handleChange, values, handleSubmit } = useFormik({

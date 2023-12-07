@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-import { Navbar } from "components/Navbar";
+import { Navbar } from "src/components/Navbar";
 
-import styles from "components/Wrapper/styles.module.css";
+import styles from "src/components/Wrapper/styles.module.css";
 
 type Props = {
   children: JSX.Element;

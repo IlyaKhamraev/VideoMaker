@@ -2,9 +2,11 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { GiPlayButton } from "react-icons/gi";
 
-import { Film } from "types";
-import styles from "components/FilmsList/FilmItem/styles.module.css";
-import plugImg from "assets/images/plug_img.png";
+import { Film } from "src/types";
+
+import styles from "src/components/FilmsList/FilmItem/styles.module.css";
+
+import plugImg from "src/assets/images/plug_img.png";
 
 export const FilmItem: FC<Film> = ({
   _id,

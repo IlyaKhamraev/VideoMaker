@@ -1,7 +1,7 @@
-import { contacts } from "components/Contanct/contacts";
-import { Wrapper } from "components/Wrapper";
+import { contacts } from "src/components/Contanct/contacts";
+import { Wrapper } from "src/components/Wrapper";
 
-import styles from "components/Contanct/styles.module.css";
+import styles from "src/components/Contanct/styles.module.css";
 
 export const Contact = () => (
   <Wrapper>

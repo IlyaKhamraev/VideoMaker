@@ -1,9 +1,9 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Link } from "react-router-dom";
 
-import { Routes } from "helpers/routes";
+import { Routes } from "src/helpers/routes";
 
-import styles from "components/Register/styles.module.css";
+import styles from "src/components/Register/styles.module.css";
 
 export const Register = () => {
   const [formValue, setFormValue] = useState({

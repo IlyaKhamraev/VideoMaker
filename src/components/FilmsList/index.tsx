@@ -1,11 +1,11 @@
 import { useStore } from "effector-react";
 
-import { FilmItem } from "components/FilmsList/FilmItem";
-import { Wrapper } from "components/Wrapper";
-import { Loader } from "components/Loader";
-import { $films } from "store/films";
+import { FilmItem } from "src/components/FilmsList/FilmItem";
+import { Wrapper } from "src/components/Wrapper";
+import { Loader } from "src/components/Loader";
+import { $films } from "src/store/films";
 
-import styles from "components/FilmsList/styles.module.css";
+import styles from "src/components/FilmsList/styles.module.css";
 
 export const FilmsList = () => {
   const { films, isLoading } = useStore($films);

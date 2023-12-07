@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useStore } from "effector-react";
 
-import { $access } from "store/access";
-import { NavItem } from "components/Navbar/NavItem";
-import { paths } from "components/Navbar/constants";
-import { Social } from "components/Social";
-import { Routes } from "helpers/routes";
+import { $access } from "src/store/access";
+import { NavItem } from "src/components/Navbar/NavItem";
+import { paths } from "src/components/Navbar/constants";
+import { Social } from "src/components/Social";
+import { Routes } from "src/helpers/routes";
 
-import styles from "components/Navbar/styles.module.css";
+import styles from "src/components/Navbar/styles.module.css";
 
 export const Navbar = () => {
   const { isAuthenticated } = useStore($access);
