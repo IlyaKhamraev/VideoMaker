@@ -9,3 +9,5 @@ export const history: History = {
   navigate: null,
   location: null,
 };
+
+console.log("test");
